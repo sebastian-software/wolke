@@ -7,6 +7,12 @@ import { configurationAvailable } from "../common/configuration"
 import { annotatePkg, appPkg } from "../common/appPackage"
 import { execNpm } from "../common/io"
 
+const DEPS = [
+  "claudia",
+  "../.",
+  // "wolke"
+]
+
 const AWS_ZONES = [
   "us-east-1",
   "us-east-2",
@@ -104,7 +110,7 @@ export default async function initCommand(context) {
     }
   })
 
-  await execNpm("install", "claudia", "--save-dev")
+  await execNpm("install", "--save-dev", ...DEPS)
 
   return 0
 }
