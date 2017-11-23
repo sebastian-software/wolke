@@ -6,7 +6,11 @@ import { appPkg } from "./common/appPackage"
 
 import defaultCommand from "./commands/defaultCommand"
 import initCommand from "./commands/initCommand"
+import certCommand from "./commands/certCommand"
 import deployCommand from "./commands/deployCommand"
+import releaseCommand from "./commands/releaseCommand"
+import statusCommand from "./commands/statusCommand"
+import versionCommand from "./commands/versionCommand"
 
 import pkg from "../package.json"
 
@@ -69,11 +73,11 @@ const availableTasks = new Map(
   [
     [ "default", defaultCommand ],
     [ "init", initCommand ],
-    [ "cert", null ],
+    [ "cert", certCommand ],
     [ "deploy", deployCommand ],
-    [ "release", null ],
-    [ "status", null ],
-    [ "version", null ]
+    [ "release", releaseCommand ],
+    [ "status", statusCommand ],
+    [ "version", versionCommand ]
   ]
 )
 
