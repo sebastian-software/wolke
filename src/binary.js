@@ -5,6 +5,7 @@ import updateNotifier from "update-notifier"
 import { appPkg } from "./common/appPackage"
 
 import defaultCommand from "./commands/defaultCommand"
+import initCommand from "./commands/initCommand"
 
 import pkg from "../package.json"
 
@@ -66,7 +67,7 @@ updateNotifier({
 const availableTasks = new Map(
   [
     [ "default", defaultCommand ],
-    [ "init", null ],
+    [ "init", initCommand ],
     [ "cert", null ],
     [ "deploy", null ],
     [ "release", null ],
