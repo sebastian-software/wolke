@@ -1,0 +1,34 @@
+{
+  "name": "wolke",
+  "version": "0.0.1",
+  "description": "Easy javascript deployment into the cloud",
+  "main": "lib/node.commonjs.js",
+  "module": "lib/node.esmodules.js",
+  "scripts": {
+    "prepare": "npm run build",
+    "build": "rimraf bin && rimraf lib && prepublish",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": {
+    "name": "Sebastian Fastner",
+    "email": "s.fastner@sebastian-software.de",
+    "url": "https://sebastian-software.de"
+  },
+  "bin": {
+    "wolke": "bin/wolke"
+  },
+  "pre-commit": "lint-staged",
+  "lint-staged": {
+    "*.js": "eslint"
+  },
+  "keywords": [
+    "aws",
+    "lambda",
+    "nodejs"
+  ],
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "prepublish": "^1.5.2",
+    "readable-code": "^3.4.15"
+  }
+}
