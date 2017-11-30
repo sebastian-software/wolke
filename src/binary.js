@@ -2,6 +2,7 @@
 import meow from "meow"
 import chalk from "chalk"
 import updateNotifier from "update-notifier"
+import AWSSDK from "aws-sdk"
 import dotenv from "dotenv"
 
 import { appPkg } from "./common/appPackage"
@@ -28,7 +29,10 @@ if (IS_INTERACTIVE) {
   )
 }
 
+AWSSDK.config.setPromisesDependency(require("bluebird")) // eslint-disable-line import/no-commonjs
+
 console.log(chalk.bold(`WOLKE ${chalk.green(`v${pkg.version}`)}`) + appInfo)
+console.log()
 
 // Parse arguments
 const command = meow(`
