@@ -7,6 +7,6 @@ export default async function defaultCommand(context) {
     return await initCommand(context)
   }
 
-  await execNpm("run", "wolke:deploy")
+  await execNpm(context, "run", "wolke:deploy")
   return 0
 }
