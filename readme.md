@@ -24,4 +24,4 @@
 
 <img src="assets/sebastiansoftware.png" alt="Sebastian Software GmbH Logo" width="250" height="200"/>
 
-Copyright 2016-2017<br/>[Sebastian Software GmbH](http://www.sebastian-software.de)
+Copyright 2017<br/>[Sebastian Software GmbH](http://www.sebastian-software.de)
