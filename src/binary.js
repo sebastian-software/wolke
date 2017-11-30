@@ -2,6 +2,8 @@
 import meow from "meow"
 import chalk from "chalk"
 import updateNotifier from "update-notifier"
+import dotenv from "dotenv"
+
 import { appPkg } from "./common/appPackage"
 
 import defaultCommand from "./commands/defaultCommand"
@@ -13,6 +15,8 @@ import statusCommand from "./commands/statusCommand"
 import versionCommand from "./commands/versionCommand"
 
 import pkg from "../package.json"
+
+dotenv.load()
 
 const appInfo = ` running on ${chalk.bold.blue(appPkg.name)}-${appPkg.version}`
 
