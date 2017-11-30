@@ -110,7 +110,7 @@ export default async function initCommand(context) {
     }
   })
 
-  await execNpm("install", "--save-dev", ...DEPS)
+  await execNpm(context, "install", "--save-dev", ...DEPS)
 
   return 0
 }
