@@ -7,8 +7,15 @@ import path from "path"
 
 const readFile = Promise.promisify(filesystem.readFile) // eslint-disable-line
 
+function checkCloudflareEnvironment() {
+  return "CLOUDFLARE_EMAIL" in process.env &&
+    process.env.CLOUDFLARE_EMAIL.length > 0 &&
+    "CLOUDFLARE_TOKEN" in process.env &&
+    process.env.CLOUDFLARE_TOKEN.length > 0
+}
+
 export async function configurationAvailable() {
-  return "wolke" in appPkg
+  return "wolke" in appPkg && checkCloudflareEnvironment()
 }
 
 export async function getConfiguration() {
