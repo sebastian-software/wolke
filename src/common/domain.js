@@ -1,10 +1,8 @@
 import AWSSDK from "aws-sdk"
-import get from "lodash/get"
 
 import { getConfiguration } from "./configuration"
 import {
-  appPkg,
-  annotatePkg
+  appPkg
 } from "../common/appPackage"
 
 async function getApiGateway() {
