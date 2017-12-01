@@ -2,6 +2,7 @@ import chalk from "chalk"
 import inquirer from "inquirer"
 import omit from "lodash/omit"
 import { dirname } from "path"
+import ora from "ora"
 
 import { configurationAvailable } from "../common/configuration"
 import { annotatePkg, appPkg } from "../common/appPackage"
@@ -134,7 +135,11 @@ export default async function initCommand(context) {
     ".env"
   )
 
+  const spinner = ora("Install NPM dependencies of wolke")
+  if (!context.flags.verbose)
+    spinner.start()
   await execNpm(context, "install", "--save-dev", ...DEPS)
+  spinner.succeed("NPM dependencies of wolke installed")
 
   return 0
 }
