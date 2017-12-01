@@ -5,7 +5,7 @@ import { dirname } from "path"
 
 import { configurationAvailable } from "../common/configuration"
 import { annotatePkg, appPkg } from "../common/appPackage"
-import { execNpm, writeContent, appendContent } from "../common/io"
+import { execNpm, appendContent } from "../common/io"
 
 const DEPS = [
   "claudia",
@@ -119,7 +119,7 @@ export default async function initCommand(context) {
     }
   })
 
-  await writeContent(
+  await appendContent(
     ".env",
     `CLOUDFLARE_EMAIL=${answers.cloudflareEmail}\nCLOUDFLARE_TOKEN=${answers.cloudflareToken}`
   )
