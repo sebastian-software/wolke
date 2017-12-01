@@ -14,6 +14,10 @@
 [travis]: https://travis-ci.org/sebastian-software/wolke
 [appveyor]: https://ci.appveyor.com/project/fastner/wolke/branch/master
 
+## Usage
+
+- Run `npm init`to have a valid package.json project
+- Initialize wolke with `npx wolke`
 
 ## License
 
