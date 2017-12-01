@@ -32,7 +32,7 @@ import {
 
 import {
   assignPathToDomain,
-  domainToZone,
+  domainToZone
 } from "../common/domain"
 import {
 

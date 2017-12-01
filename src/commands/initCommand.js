@@ -2,15 +2,15 @@ import chalk from "chalk"
 import inquirer from "inquirer"
 import omit from "lodash/omit"
 import { dirname } from "path"
+import ora from "ora"
 
 import { configurationAvailable } from "../common/configuration"
 import { annotatePkg, appPkg } from "../common/appPackage"
-import { execNpm } from "../common/io"
+import { execNpm, appendContent } from "../common/io"
 
 const DEPS = [
   "claudia",
-  "../.",
-  // "wolke"
+  "wolke"
 ]
 
 const AWS_ZONES = [
@@ -93,6 +93,16 @@ export default async function initCommand(context) {
       name: "distPath",
       message: "Path to distribution output",
       default: parseDefaultDistPath(appPkg.module, appPkg.main)
+    },
+    {
+      type: "input",
+      name: "cloudflareEmail",
+      message: "Email of cloudflare account"
+    },
+    {
+      type: "input",
+      name: "cloudflareToken",
+      message: "Global API key of cloudflare account (https://www.cloudflare.com/a/profile)"
     }
   ])
 
@@ -102,7 +112,7 @@ export default async function initCommand(context) {
   }
 
   await annotatePkg({
-    wolke: omit(answers, [ "continueInit" ]),
+    wolke: omit(answers, [ "continueInit", "cloudflareEmail", "cloudflareToken" ]),
     scripts: {
       "wolke:deploy": "wolke deploy",
       "wolke:release": "wolke release",
@@ -110,7 +120,31 @@ export default async function initCommand(context) {
     }
   })
 
-  await execNpm(context, "install", "--save-dev", ...DEPS)
+  await appendContent(
+    ".env",
+    `CLOUDFLARE_EMAIL=${answers.cloudflareEmail}\nCLOUDFLARE_TOKEN=${answers.cloudflareToken}`
+  )
+
+  await appendContent(
+    ".gitignore",
+    ".env"
+  )
+
+  await appendContent(
+    ".npmignore",
+    ".env"
+  )
+
+  const spinner = ora("Install NPM dependencies of wolke")
+  if (!context.flags.verbose)
+    spinner.start()
+
+  const npmReturn = await execNpm(context, "install", "--save-dev", ...DEPS)
+  if (npmReturn.code > 0) {
+    spinner.fail("NPM dependencies of wolke not correctly installed")
+    return 1
+  }
+  spinner.succeed("NPM dependencies of wolke installed")
 
   return 0
 }
