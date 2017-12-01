@@ -5,7 +5,7 @@ import { dirname } from "path"
 
 import { configurationAvailable } from "../common/configuration"
 import { annotatePkg, appPkg } from "../common/appPackage"
-import { execNpm } from "../common/io"
+import { execNpm, writeContent } from "../common/io"
 
 const DEPS = [
   "claudia",
@@ -108,6 +108,11 @@ export default async function initCommand(context) {
       "wolke:status": "wolke status"
     }
   })
+
+  await writeContent(
+    ".env",
+    `CLOUDFLARE_EMAIL=${answers.cloudflareEmail}\nCLOUDFLARE_TOKEN=${answers.cloudflareToken}`
+  )
 
   await execNpm(context, "install", "--save-dev", ...DEPS)
 
