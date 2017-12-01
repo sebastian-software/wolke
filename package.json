@@ -7,6 +7,9 @@
   "scripts": {
     "prepare": "npm run build",
     "build": "rimraf bin && rimraf lib && prepublish",
+    "release": "git push && release-it --github.release --npm.publish --non-interactive",
+    "release:minor": "git push && release-it --github.release --npm.publish --non-interactive --increment minor",
+    "release:major": "git push && release-it --github.release --npm.publish --non-interactive --increment major",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": {
@@ -29,7 +32,8 @@
   "license": "Apache-2.0",
   "devDependencies": {
     "prepublish": "^1.5.2",
-    "readable-code": "^3.4.15"
+    "readable-code": "^3.4.15",
+    "release-it": "^5.0.0"
   },
   "dependencies": {
     "app-root-dir": "^1.0.2",
