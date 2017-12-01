@@ -8,6 +8,7 @@ import chalk from "chalk"
 
 const which = Promise.promisify(whichFnt) // eslint-disable-line
 const fileAccess = Promise.promisify(filesystem.access) // eslint-disable-line
+const fileWrite = Promise.promisify(filesystem.writeFile) // eslint-disable-line
 
 export async function exec(context, command, ...parameter)
 {
@@ -91,4 +92,8 @@ export function fileAccessible(filename) {
   return fileAccess(filename, filesystem.constants.R_OK)
     .then((result) => { return true })
     .catch((error) => { return false })
+}
+
+export function writeContent(filename, content) {
+  return fileWrite(filename, content)
 }
