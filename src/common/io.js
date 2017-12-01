@@ -105,8 +105,14 @@ export function appendContent(filename, content) {
 }
 
 export const identityComparator = (a, b) => a === b
-export const preEqualComparator = (a, b) =>
-  identityComparator(a.split("=")[0], b.split("=")[0])
+export const preEqualComparator = (a, b) => {
+  try {
+    return identityComparator(a.split("=")[0], b.split("=")[0])
+  }
+  catch (error) {
+    return false
+  }
+}
 
 export async function ensureContent(filename, lines, comparator = identityComparator) {
   let content = []
