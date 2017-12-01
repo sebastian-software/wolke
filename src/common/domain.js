@@ -53,3 +53,10 @@ export async function assignPathToDomain(domainName, devCertId, restApiId, stage
     ...domainNameResult
   }
 }
+
+const ZONE_ELEMENTS = 2
+export function domainToZone(fqdn) {
+  const splittedDomainName = fqdn.split(/\./g)
+
+  return splittedDomainName.slice(-ZONE_ELEMENTS).join(".")
+}

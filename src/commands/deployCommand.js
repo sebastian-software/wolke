@@ -31,7 +31,8 @@ import {
 */
 
 import {
-  assignPathToDomain
+  assignPathToDomain,
+  domainToZone,
 } from "../common/domain"
 import {
 
@@ -166,7 +167,7 @@ export default async function deployCommand(context) {
   spinner.succeed(`Domain ${devDomain} is set up`)
 
   spinner = ora("Set up DNS records").start()
-  const zone = await findZone("wolke.run")
+  const zone = await findZone(domainToZone(result.domainName))
   const dnsRecord = await findDnsRecord(zone, result.domainName)
   if (dnsRecord) {
     spinner.text = "Update DNS record"
