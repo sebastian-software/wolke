@@ -92,6 +92,16 @@ export default async function initCommand(context) {
       name: "distPath",
       message: "Path to distribution output",
       default: parseDefaultDistPath(appPkg.module, appPkg.main)
+    },
+    {
+      type: "input",
+      name: "cloudflareEmail",
+      message: "Email of cloudflare account"
+    },
+    {
+      type: "input",
+      name: "cloudflareToken",
+      message: "Global API key of cloudflare account (https://www.cloudflare.com/a/profile)"
     }
   ])
 
@@ -101,7 +111,7 @@ export default async function initCommand(context) {
   }
 
   await annotatePkg({
-    wolke: omit(answers, [ "continueInit" ]),
+    wolke: omit(answers, [ "continueInit", "cloudflareEmail", "cloudflareToken" ]),
     scripts: {
       "wolke:deploy": "wolke deploy",
       "wolke:release": "wolke release",
