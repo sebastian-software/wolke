@@ -6,7 +6,7 @@ import ora from "ora"
 
 import { configurationAvailable } from "../common/configuration"
 import { annotatePkg, appPkg } from "../common/appPackage"
-import { execNpm, appendContent } from "../common/io"
+import { execNpm, ensureContent, preEqualComparator } from "../common/io"
 
 const DEPS = [
   "claudia",
@@ -120,19 +120,23 @@ export default async function initCommand(context) {
     }
   })
 
-  await appendContent(
+  await ensureContent(
     ".env",
-    `CLOUDFLARE_EMAIL=${answers.cloudflareEmail}\nCLOUDFLARE_TOKEN=${answers.cloudflareToken}`
+    [
+      `CLOUDFLARE_EMAIL=${answers.cloudflareEmail}`,
+      `CLOUDFLARE_TOKEN=${answers.cloudflareToken}`
+    ],
+    preEqualComparator
   )
 
-  await appendContent(
+  await ensureContent(
     ".gitignore",
-    ".env"
+    [ ".env" ]
   )
 
-  await appendContent(
+  await ensureContent(
     ".npmignore",
-    ".env"
+    [ ".env" ]
   )
 
   const spinner = ora("Install NPM dependencies of wolke")
