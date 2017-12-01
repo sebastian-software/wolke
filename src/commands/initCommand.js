@@ -138,7 +138,12 @@ export default async function initCommand(context) {
   const spinner = ora("Install NPM dependencies of wolke")
   if (!context.flags.verbose)
     spinner.start()
-  await execNpm(context, "install", "--save-dev", ...DEPS)
+
+  const npmReturn = await execNpm(context, "install", "--save-dev", ...DEPS)
+  if (npmReturn.code > 0) {
+    spinner.fail("NPM dependencies of wolke not correctly installed")
+    return 1
+  }
   spinner.succeed("NPM dependencies of wolke installed")
 
   return 0
