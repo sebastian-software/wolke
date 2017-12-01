@@ -10,6 +10,7 @@ const which = Promise.promisify(whichFnt) // eslint-disable-line
 const fileAccess = Promise.promisify(filesystem.access) // eslint-disable-line
 const fileWrite = Promise.promisify(filesystem.writeFile) // eslint-disable-line
 const fileAppend = Promise.promisify(filesystem.appendFile) // eslint-disable-line
+const fileRead = Promise.promisify(filesystem.readFile) // eslint-disable-line
 
 export async function exec(context, command, ...parameter)
 {
@@ -101,4 +102,26 @@ export function writeContent(filename, content) {
 
 export function appendContent(filename, content) {
   return fileAppend(filename, `\n${content}`)
+}
+
+export const identityComparator = (a, b) => a === b
+export const preEqualComparator = (a, b) =>
+  identityComparator(a.split("=")[0], b.split("=")[0])
+
+export async function ensureContent(filename, lines, comparator = identityComparator) {
+  let content = []
+
+  try {
+    content = (await fileRead(filename, "utf8")).split("\n")
+  } catch (error) {
+    // noop
+  }
+
+  const filterContent = content.filter((item) => {
+    return !lines.some(
+      (contentItem) => comparator(item, contentItem)
+    )
+  })
+
+  await fileWrite(filename, filterContent.concat(lines).join("\n"))
 }
