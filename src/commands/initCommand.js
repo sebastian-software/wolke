@@ -9,8 +9,7 @@ import { execNpm } from "../common/io"
 
 const DEPS = [
   "claudia",
-  "../.",
-  // "wolke"
+  "wolke"
 ]
 
 const AWS_ZONES = [
