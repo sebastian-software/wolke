@@ -12,9 +12,13 @@ async function getApiGateway() {
   return new AWSSDK.APIGateway({ apiVersion: "2015-07-09" })
 }
 
-export async function assignPathToDomain(domainName, devCertId, restApiId, stage) {
+export async function assignPathToDomain(domainName, devCertId, restApiId, stage, options = {}) {
   const apigateway = await getApiGateway()
-  const publishDomainName = `${appPkg.name}-${stage}.${domainName}`
+
+  let publishDomainName = domainName
+  if (!options.fixedDomainName) {
+    publishDomainName = `${appPkg.name}-${stage}.${domainName}`
+  }
 
   let domainNameResult
   try {
