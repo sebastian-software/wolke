@@ -16,7 +16,7 @@
 
 ## Usage
 
-- Run `npm init`to have a valid package.json project
+- Run `npm init` to have a valid package.json project
 - Initialize wolke with `npx wolke`
 
 ## License
