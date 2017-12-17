@@ -2,6 +2,10 @@
   "name": "wolke",
   "version": "0.4.0",
   "description": "Easy javascript deployment into the cloud",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sebastian-software/wolke"
+  },
   "main": "lib/node.commonjs.js",
   "module": "lib/node.esmodules.js",
   "scripts": {
