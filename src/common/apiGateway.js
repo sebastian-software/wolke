@@ -14,6 +14,15 @@ async function getApiGateway() {
   return new AWSSDK.APIGateway({ apiVersion: "2015-07-09" })
 }
 
+export async function getApiByName(name) {
+  const apigateway = await getApiGateway()
+
+  const apiName = `wolke-${name}`
+  const restApis = await apigateway.getRestApis().promise()
+
+  return restApis.items.filter((item) => item.name === apiName)[0]
+}
+
 export async function createOrGetApi() {
   const configuration = await getConfiguration()
   const apigateway = await getApiGateway()
