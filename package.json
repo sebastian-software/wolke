@@ -1,6 +1,6 @@
 {
   "name": "wolke",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "description": "Easy javascript deployment into the cloud",
   "main": "lib/node.commonjs.js",
   "module": "lib/node.esmodules.js",
