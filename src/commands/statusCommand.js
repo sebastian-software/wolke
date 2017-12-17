@@ -19,6 +19,15 @@ import {
   appPkg
 } from "../common/appPackage"
 
+function outputStage(data, stage) {
+  const d = get(data, stage)
+
+  return `Stage ${chalk.yellow(stage)}:
+  Version:                  ${chalk.cyan(d.version)}
+  Distribution domain name: ${chalk.cyan(d.distributionDomainName)}
+  Public domain name:       ${chalk.cyan(d.domainName)}`
+}
+
 export default async function statusCommand(context) {
   if (!await configurationAvailable()) {
     return await initCommand(context)
@@ -68,10 +77,11 @@ export default async function statusCommand(context) {
   }, {})
 
   console.log(`
-Current deployment status of ${appPkg.name}:
+Current deployment status of ${chalk.cyan(appPkg.name)} (${chalk.gray(`ID ${result.development.restApiId}`)})
 
+${outputStage(result, "development")}
 
+${result.production ? outputStage(result, "production") : ""}
   `)
-  console.log(">>>", JSON.stringify(result, null, 2))
   return 0
 }
