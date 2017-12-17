@@ -40,6 +40,7 @@ const command = meow(`
     $ wolke [<command>]
 
   Options:
+    --no-interaction   Abort with exit code > 0 if interaction is required.
     --verbose, -v      Generate verbose output messages.
     --quiet, -q        Reduce amount of output messages to warnings and errors.
     --help, -h         Show this help

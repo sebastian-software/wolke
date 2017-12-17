@@ -53,6 +53,11 @@ export default async function initCommand(context) {
     return 1
   }
 
+  if (context.flags.interaction === false) {
+    console.log(chalk.red("no interaction allowed due to --no-interaction flag"))
+    return 1
+  }
+
   const answers = await inquirer.prompt([
     {
       type: "confirm",
