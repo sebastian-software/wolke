@@ -5,6 +5,7 @@ import whichFnt from "which"
 import path from "path"
 import filesystem from "fs"
 import chalk from "chalk"
+import readline from "readline"
 
 const which = Promise.promisify(whichFnt) // eslint-disable-line
 const fileAccess = Promise.promisify(filesystem.access) // eslint-disable-line
@@ -40,8 +41,8 @@ export async function exec(context, command, ...parameter)
     })
 
     proc.stderr.on("data", (data) => {
-      process.stdout.clearLine()
-      process.stdout.cursorTo(0)
+      readline.clearLine(process.stdout)
+      readline.cursorTo(process.stdout, 0)
       const content = data
         .toString("utf8")
         .split(/\n/g)
