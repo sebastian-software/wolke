@@ -136,7 +136,7 @@ export default async function initCommand(context) {
 
   await ensureContent(
     ".gitignore",
-    [ ".env" ]
+    [ ".env", "node_modules" ]
   )
 
   await ensureContent(
