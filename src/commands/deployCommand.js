@@ -56,6 +56,15 @@ const BASE36_ALPHABET = "0123456789abcdefghijklmnopqrstuvwxyz"
 const baseEncoder = baseX(BASE36_ALPHABET)
 */
 
+function removeSchemeFromDomainName(domainName) {
+  try {
+    return domainName.split("://")[1]
+  } catch (error) {
+    return domainName
+  }
+}
+
+/* eslint-disable max-statements */
 export default async function deployCommand(context) {
   let spinner
 
@@ -98,6 +107,8 @@ export default async function deployCommand(context) {
       spinner.fail("Cannot create lambda proxy")
       return 1
     }
+
+    await execNpm(context, "install", "express")
 
     spinner.succeed("Serverless express proxy created")
   }
@@ -155,40 +166,50 @@ export default async function deployCommand(context) {
     spinner.succeed("Deployment of lambda function succeeded")
   }
 
+  let result
+
   const devDomain = configuration.value("developmentDomain")
   spinner = ora(`Set up domain ${devDomain}`).start()
-  const devCertId = await getWildcardCertIdForDomain(devDomain)
-  const result = await assignPathToDomain(
-    devDomain,
-    devCertId,
-    await getClaudiaConfig("api.id"),
-    "development"
-  )
-  spinner.succeed(`Domain ${devDomain} is set up`)
+  if (devDomain) {
+    const devCertId = await getWildcardCertIdForDomain(devDomain)
+    result = await assignPathToDomain(
+      devDomain,
+      devCertId,
+      await getClaudiaConfig("api.id"),
+      "development"
+    )
+    spinner.succeed(`Domain ${devDomain} is set up`)
 
-  spinner = ora("Set up DNS records").start()
-  const zone = await findZone(domainToZone(result.domainName))
-  const dnsRecord = await findDnsRecord(zone, result.domainName)
-  if (dnsRecord) {
-    spinner.text = "Update DNS record"
-    await updateDnsRecord(
-      zone,
-      dnsRecord,
-      {
-        cname: result.distributionDomainName
-      }
-    )
-    spinner.succeed("DNS record updated")
+    spinner = ora("Set up DNS records").start()
+    const zone = await findZone(domainToZone(result.domainName))
+    const dnsRecord = await findDnsRecord(zone, result.domainName)
+    if (dnsRecord) {
+      spinner.text = "Update DNS record"
+      await updateDnsRecord(
+        zone,
+        dnsRecord,
+        {
+          cname: result.distributionDomainName
+        }
+      )
+      spinner.succeed("DNS record updated")
+    } else {
+      spinner.text = "Create DNS record"
+      await createDnsRecord(
+        zone,
+        result.domainName,
+        {
+          cname: result.distributionDomainName
+        }
+      )
+      spinner.succeed("DNS record created")
+    }
   } else {
-    spinner.text = "Create DNS record"
-    await createDnsRecord(
-      zone,
-      result.domainName,
-      {
-        cname: result.distributionDomainName
-      }
-    )
-    spinner.succeed("DNS record created")
+    spinner.succeed("No custom development domain")
+
+    result = {
+      domainName: removeSchemeFromDomainName(claudiaExitCode.json.url || claudiaExitCode.json.api.url)
+    }
   }
 
   /*
