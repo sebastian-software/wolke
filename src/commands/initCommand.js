@@ -95,12 +95,14 @@ export default async function initCommand(context) {
       }
     }, */
 
+    /*
     {
       type: "input",
       name: "distPath",
       message: "Path to distribution output",
       default: parseDefaultDistPath(appPkg.module, appPkg.main)
-    },
+    }, */
+
     {
       type: "input",
       name: "cloudflareEmail",
