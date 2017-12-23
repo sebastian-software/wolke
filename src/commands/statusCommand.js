@@ -83,6 +83,11 @@ export default async function statusCommand(context) {
     }
   }, {})
 
+  if (!result.development) {
+    console.log(chalk.red("No deployment for stage development found"))
+    return 0
+  }
+
   console.log(`
 Current deployment status of ${chalk.cyan(appPkg.name)} (${chalk.gray(`ID ${result.development.restApiId}`)})
 
