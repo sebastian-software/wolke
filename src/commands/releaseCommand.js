@@ -58,43 +58,53 @@ export default async function releaseCommand(context) {
   spinner.succeed("Release of production version done")
 
   const prodDomain = configuration.value("productionDomain")
-  spinner = ora(`Set up domain ${prodDomain}`).start()
-  const devCertId = await getCertIdForDomain(prodDomain)
-  const result = await assignPathToDomain(
-    prodDomain,
-    devCertId,
-    await getClaudiaConfig("api.id"),
-    "production",
-    {
-      fixedDomainName: true
-    }
-  )
-  spinner.succeed(`Domain ${prodDomain} is set up`)
+  let deployedDomainName
 
-  spinner = ora("Set up DNS records").start()
-  const zone = await findZone(domainToZone(result.domainName))
-  const dnsRecord = await findDnsRecord(zone, result.domainName)
-  if (dnsRecord) {
-    spinner.text = "Update DNS record"
-    await updateDnsRecord(
-      zone,
-      dnsRecord,
+  if (prodDomain) {
+    spinner = ora(`Set up domain ${prodDomain}`).start()
+    const devCertId = await getCertIdForDomain(prodDomain)
+    const result = await assignPathToDomain(
+      prodDomain,
+      devCertId,
+      await getClaudiaConfig("api.id"),
+      "production",
       {
-        cname: result.distributionDomainName
+        fixedDomainName: true
       }
     )
-    spinner.succeed("DNS record updated")
+    spinner.succeed(`Domain ${prodDomain} is set up`)
+
+    spinner = ora("Set up DNS records").start()
+    const zone = await findZone(domainToZone(result.domainName))
+    const dnsRecord = await findDnsRecord(zone, result.domainName)
+    if (dnsRecord) {
+      spinner.text = "Update DNS record"
+      await updateDnsRecord(
+        zone,
+        dnsRecord,
+        {
+          cname: result.distributionDomainName
+        }
+      )
+      spinner.succeed("DNS record updated")
+    } else {
+      spinner.text = "Create DNS record"
+      await createDnsRecord(
+        zone,
+        result.domainName,
+        {
+          cname: result.distributionDomainName
+        }
+      )
+      spinner.succeed("DNS record created")
+    }
+
+    deployedDomainName = `https://${result.domainName}`
   } else {
-    spinner.text = "Create DNS record"
-    await createDnsRecord(
-      zone,
-      result.domainName,
-      {
-        cname: result.distributionDomainName
-      }
-    )
-    spinner.succeed("DNS record created")
+    deployedDomainName = claudiaExitCode.json.url
   }
+
+  console.log(`\n${chalk.cyan("Deployed to")} ${chalk.green(deployedDomainName)}`)
 
   return 0
 }
