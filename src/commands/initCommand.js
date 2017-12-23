@@ -84,7 +84,8 @@ export default async function initCommand(context) {
       message: "Custom domain for production stage (default is a random AWS assigned domain name)",
       validate: validateDomain
     },
-    {
+
+    /* {
       type: "input",
       name: "parallelDeployments",
       message: "Number of parallel deployments in development stage",
@@ -92,7 +93,8 @@ export default async function initCommand(context) {
       validate: (currentAnswers) => {
         return (/^\d+$/).test(currentAnswers)
       }
-    },
+    }, */
+
     {
       type: "input",
       name: "distPath",
