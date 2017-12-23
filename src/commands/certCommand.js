@@ -28,10 +28,16 @@ export default async function certCommand(context) {
   const devDomain = configuration.value("developmentDomain")
   const prodDomain = configuration.value("productionDomain")
 
-  let [ devCertId, prodCertId ] = await Promise.all([
-    getWildcardCertIdForDomain(devDomain),
-    getCertIdForDomain(prodDomain)
-  ])
+  // Don't do anything with certs if there is no domain name in configuration
+  let devCertId = true
+  let prodCertId = true
+
+  if (devDomain) {
+    devCertId = await getWildcardCertIdForDomain(devDomain)
+  }
+  if (prodDomain) {
+    prodCertId = await getCertIdForDomain(prodDomain)
+  }
 
   if (!devCertId && !prodCertId) {
     spinner.fail(
