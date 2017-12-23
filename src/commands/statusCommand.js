@@ -39,7 +39,14 @@ export default async function statusCommand(context) {
     return printConfigurationErrors(configuration)
   }
 
-  const restApiId = (await getApiByName(appPkg.name)).id
+  const api = await getApiByName(appPkg.name)
+
+  if (!api) {
+    console.log(chalk.cyan("no deployment found"))
+    return 0
+  }
+
+  const restApiId = api.id
 
   const customDomainNames = (await getCustomDomainNames())
     .items
