@@ -1,7 +1,5 @@
 import chalk from "chalk"
 import path from "path"
-
-// import baseX from "base-x"
 import ora from "ora"
 
 import {
@@ -10,51 +8,16 @@ import {
   printConfigurationErrors,
   getClaudiaConfig
 } from "../common/configuration"
-import {
-  execNpm,
-  execClaudia,
-  fileAccessible
-} from "../common/io"
-import {
-  ROOT,
-  appPkg
-} from "../common/appPackage"
+import { execNpm, execClaudia, fileAccessible } from "../common/io"
+import { ROOT, appPkg } from "../common/appPackage"
 
-/*
-import {
-  cleanStages,
-  createOrGetApi,
-  createOrGetVersionResource,
-  createOrGetProxyResource,
-  createOrGetProxyMethods
-} from "../common/apiGateway"
-*/
+import { assignPathToDomain, domainToZone } from "../common/domain"
+import { getWildcardCertIdForDomain } from "../common/cert"
 
-import {
-  assignPathToDomain,
-  domainToZone
-} from "../common/domain"
-import {
-
-  // getCertIdForDomain,
-
-  getWildcardCertIdForDomain
-} from "../common/cert"
-
-import {
-  findZone,
-  findDnsRecord,
-  updateDnsRecord,
-  createDnsRecord
-} from "../common/cloudflare"
+import { findZone, findDnsRecord, updateDnsRecord, createDnsRecord } from "../common/cloudflare"
 
 import initCommand from "./initCommand"
 import certCommand from "./certCommand"
-
-/*
-const BASE36_ALPHABET = "0123456789abcdefghijklmnopqrstuvwxyz"
-const baseEncoder = baseX(BASE36_ALPHABET)
-*/
 
 function removeSchemeFromDomainName(domainName) {
   try {
@@ -78,7 +41,7 @@ export default async function deployCommand(context) {
     return printConfigurationErrors(configuration)
   }
 
-  const buildDate = (new Date()).toISOString()
+  const buildDate = new Date().toISOString()
 
   await certCommand(context)
 
@@ -115,8 +78,7 @@ export default async function deployCommand(context) {
 
   if (!await fileAccessible(path.join(ROOT, "claudia.json"))) {
     spinner = ora(`Claudia initial deployment of ${appPkg.name} started`)
-    if (!context.flags.verbose)
-      spinner.start()
+    if (!context.flags.verbose) spinner.start()
 
     claudiaExitCode = await execClaudia(
       context,
@@ -144,8 +106,7 @@ export default async function deployCommand(context) {
     spinner.succeed("Deployment of lambda function succeeded")
   } else {
     spinner = ora(`Claudia deployment of ${appPkg.name} started`)
-    if (!context.flags.verbose)
-      spinner.start()
+    if (!context.flags.verbose) spinner.start()
 
     claudiaExitCode = await execClaudia(
       context,
@@ -172,12 +133,7 @@ export default async function deployCommand(context) {
   spinner = ora(`Set up domain ${devDomain}`).start()
   if (devDomain) {
     const devCertId = await getWildcardCertIdForDomain(devDomain)
-    result = await assignPathToDomain(
-      devDomain,
-      devCertId,
-      await getClaudiaConfig("api.id"),
-      "development"
-    )
+    result = await assignPathToDomain(devDomain, devCertId, await getClaudiaConfig("api.id"), "development")
     spinner.succeed(`Domain ${devDomain} is set up`)
 
     spinner = ora("Set up DNS records").start()
@@ -185,23 +141,15 @@ export default async function deployCommand(context) {
     const dnsRecord = await findDnsRecord(zone, result.domainName)
     if (dnsRecord) {
       spinner.text = "Update DNS record"
-      await updateDnsRecord(
-        zone,
-        dnsRecord,
-        {
-          cname: result.distributionDomainName
-        }
-      )
+      await updateDnsRecord(zone, dnsRecord, {
+        cname: result.distributionDomainName
+      })
       spinner.succeed("DNS record updated")
     } else {
       spinner.text = "Create DNS record"
-      await createDnsRecord(
-        zone,
-        result.domainName,
-        {
-          cname: result.distributionDomainName
-        }
-      )
+      await createDnsRecord(zone, result.domainName, {
+        cname: result.distributionDomainName
+      })
       spinner.succeed("DNS record created")
     }
   } else {
@@ -211,37 +159,6 @@ export default async function deployCommand(context) {
       domainName: removeSchemeFromDomainName(claudiaExitCode.json.url || claudiaExitCode.json.api.url)
     }
   }
-
-  /*
-  const hash = Buffer.from(claudiaExitCode.json.CodeSha256, "base64")
-  const b36Hash = baseEncoder.encode(hash).substring(0, 10)
-
-  const restApiId = await getClaudiaConfig("api.id")
-  await cleanStages(restApiId)
-  */
-
-  /*
-  const restApi = await createOrGetApi(b36Hash)
-  const versionResource = await createOrGetVersionResource(restApi.id, b36Hash)
-  const proxyResource = await createOrGetProxyResource(restApi.id, versionResource)
-  const proxyMethods = await createOrGetProxyMethods(restApi.id, proxyResource)
-  console.log(">>>>", JSON.stringify(proxyMethods, null, 2))
-  */
-
-  /*
-  if (claudiaExitCode.json) {
-    const versionReturn = await execClaudia(
-      context,
-      "set-version",
-      "--version",
-      b36Hash,
-      "--update-env",
-      `WOLKE_DEPLOY_DATE=${buildDate}`
-    )
-
-    console.log(`${chalk.cyan("Deployed to")} ${chalk.green(versionReturn.json.url)}`)
-  }
-  */
 
   const deployedDomainName = `https://${result.domainName}`
   console.log(`\n${chalk.cyan("Deployed to")} ${chalk.green(deployedDomainName)}`)
