@@ -45,12 +45,22 @@ export default async function deployCommand(context) {
 
   await certCommand(context)
 
-  spinner = ora("Start build process").start()
-  const exitCode = (await execNpm(context, "run", "build")).code
-  if (exitCode > 0) {
-    spinner.warn("'npm run build' failed. Maybe you don't need one?")
+  if (appPkg.scripts.dist) {
+    spinner = ora("Start dist process").start()
+    const exitCode = (await execNpm(context, "run", "dist")).code
+    if (exitCode > 0) {
+      spinner.warn("'npm run dist' failed. Maybe you don't need one?")
+    } else {
+      spinner.succeed("'npm run dist' finished")
+    }
   } else {
-    spinner.succeed("'npm run build' finished")
+    spinner = ora("Start build process").start()
+    const exitCode = (await execNpm(context, "run", "build")).code
+    if (exitCode > 0) {
+      spinner.warn("'npm run build' failed. Maybe you don't need one?")
+    } else {
+      spinner.succeed("'npm run build' finished")
+    }
   }
 
   const lambdaFile = path.join(ROOT, "lambda.js")
