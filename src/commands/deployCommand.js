@@ -9,10 +9,12 @@ import {
   getClaudiaConfig
 } from "../common/configuration"
 import { execNpm, execClaudia, fileAccessible } from "../common/io"
+import { createDistribution } from "../common/node"
 import { ROOT, appPkg } from "../common/appPackage"
 
 import { assignPathToDomain, domainToZone } from "../common/domain"
 import { getWildcardCertIdForDomain } from "../common/cert"
+import { createFunctionAsService, checkVersionDeployed } from "../common/lambda"
 
 import { findZone, findDnsRecord, updateDnsRecord, createDnsRecord } from "../common/cloudflare"
 
@@ -44,6 +46,20 @@ export default async function deployCommand(context) {
   const buildDate = new Date().toISOString()
 
   await certCommand(context)
+
+  const isDeployed = await checkVersionDeployed(appPkg.name, appPkg.version)
+  if (isDeployed) {
+    console.error(
+      chalk.red(
+        `Version ${appPkg.version} is already deployed! Please update your version number in package.json`
+      )
+    )
+  }
+
+  const distFile = await createDistribution(context)
+
+  await createFunctionAsService(appPkg.name, appPkg.version, distFile)
+  return
 
   if (appPkg.scripts.dist) {
     spinner = ora("Start dist process").start()
