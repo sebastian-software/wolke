@@ -30,16 +30,20 @@ export async function exec(context, command, ...parameter) {
       cwd: context.cwd || ROOT
     })
 
-    let lastChunk = null
+    let chunks = []
     proc.stdout.on("data", (data) => {
-      lastChunk = data.toString("utf8")
+      chunks.push(data)
+
       if (context.flags.verbose) {
-        const content = lastChunk
+        const content = data
+          .toString("utf8")
           .split(/\n/g)
           .map((line) => `| ${line}`)
           .join("\n")
         process.stdout.write(chalk.blue(content))
-        process.stdout.write("\n")
+        if (content[content.length - 1] !== "\n") {
+          process.stdout.write("\n")
+        }
       }
     })
 
@@ -52,16 +56,20 @@ export async function exec(context, command, ...parameter) {
         .map((line) => `| ${line}`)
         .join("\n")
       process.stdout.write(chalk.red(content))
-      process.stdout.write("\n")
+      if (content[content.length - 1] !== "\n") {
+        process.stdout.write("\n")
+      }
     })
 
     proc.on("close", (code) => {
       let json = null
       try {
-        json = JSON.parse(lastChunk)
+        json = JSON.parse(chunks[chunks.length - 1].toString("utf8"))
       } catch (error) {
         // noop
       }
+
+      const content = Buffer.concat(chunks).toString("utf8")
 
       if (context.flags.verbose) {
         process.stdout.write("\n")
@@ -69,6 +77,7 @@ export async function exec(context, command, ...parameter) {
 
       resolve({
         code,
+        content,
         json
       })
     })
@@ -80,6 +89,7 @@ export function execNpm(context, command, ...parameter) {
 }
 
 const DEFAULT_NODE_VERSION = "8"
+
 // const DEFAULT_NODE_VERSION = "6"
 
 // Runs npm inside of docker if not on a linux system
