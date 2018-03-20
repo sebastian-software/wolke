@@ -9,7 +9,12 @@ import { annotatePkg, appPkg } from "../common/appPackage"
 import { execNpm, ensureContent, preEqualComparator } from "../common/io"
 
 const DEPS = [
-  "claudia",
+  "serverless",
+  "serverless-content-encoding",
+  "serverless-plugin-custom-domain",
+  "serverless-plugin-warmup",
+  "serverless-apigw-binary",
+  "serverless-plugin-info-json",
   "wolke"
 ]
 
@@ -33,12 +38,10 @@ const AWS_ZONES = [
 function parseDefaultDistPath(modulePath, mainPath) {
   const distPath = modulePath || mainPath
 
-  if (!distPath)
-    return "."
+  if (!distPath) return "."
 
   const dirName = dirname(distPath)
-  if (!dirName)
-    return "."
+  if (!dirName) return "."
 
   return dirName
 }
@@ -131,26 +134,16 @@ export default async function initCommand(context) {
 
   await ensureContent(
     ".env",
-    [
-      `CLOUDFLARE_EMAIL=${answers.cloudflareEmail}`,
-      `CLOUDFLARE_TOKEN=${answers.cloudflareToken}`
-    ],
+    [ `CLOUDFLARE_EMAIL=${answers.cloudflareEmail}`, `CLOUDFLARE_TOKEN=${answers.cloudflareToken}` ],
     preEqualComparator
   )
 
-  await ensureContent(
-    ".gitignore",
-    [ ".env", "node_modules" ]
-  )
+  await ensureContent(".gitignore", [ ".env", "node_modules" ])
 
-  await ensureContent(
-    ".npmignore",
-    [ ".env" ]
-  )
+  await ensureContent(".npmignore", [ ".env" ])
 
   const spinner = ora("Install NPM dependencies of wolke")
-  if (!context.flags.verbose)
-    spinner.start()
+  if (!context.flags.verbose) spinner.start()
 
   const npmReturn = await execNpm(context, "install", "--save-dev", ...DEPS)
   if (npmReturn.code > 0) {

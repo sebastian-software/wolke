@@ -9,9 +9,10 @@ import filesystem from "fs"
 import request from "request"
 import archiver from "archiver"
 
-import { execNpm, execDockerNpm, mkdir, rimraf, copyFile, makeExecutable } from "./io"
+import { execNpm, execDockerNpm, mkdir, rimraf, copyFile, makeExecutable, fileWrite } from "./io"
 import { ROOT, appPkg } from "./appPackage"
 import { handleExpressApp } from "./lambda"
+import { getServerlessYmlContent } from "./serverless"
 
 function unpack(tarFile, cwd, options = {}) {
   return new Promise((resolve) => {
@@ -79,6 +80,11 @@ async function pack(distArchive, distPath) {
   })
 }
 
+async function createServerlessConfig(basePath) {
+  const serverlessYmlPath = path.join(basePath, "serverless.yml")
+  await fileWrite(serverlessYmlPath, getServerlessYmlContent())
+}
+
 export async function createDistribution(context) {
   try {
     // await execNpm(context, "install")
@@ -122,7 +128,12 @@ export async function createDistribution(context) {
     await mkdir(nodePath)
     await requestNode(nodePath)
 
-    return await pack(outputFilename, tmpDistPath)
+    await createServerlessConfig(tmpDistPath)
+
+    return {
+      path: tmpDistPath,
+      context: newContext
+    } // await pack(outputFilename, tmpDistPath)
   } catch (error) {
     console.error(error)
     throw error
