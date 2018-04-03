@@ -17,6 +17,7 @@ export const fileRead = Promise.promisify(filesystem.readFile) // eslint-disable
 export const mkdir = Promise.promisify(mkdirp) // eslint-disable-line
 export const rimraf = Promise.promisify(rimrafFnt) // eslint-disable-line
 export const chmod = Promise.promisify(filesystem.chmod) // eslint-disable-line
+export const readdir = Promise.promisify(filesystem.readdir) // eslint-disable-line
 
 export async function exec(context, command, ...parameter) {
   const absoluteCommand = await which(command, {
