@@ -8,7 +8,7 @@ service: WOLKE-${appPkg.name}
 
 provider:
   name: aws
-  runtime: nodejs6.10
+  runtime: nodejs8.10
   memorySize: 256
   timeout: 18
   stage: \${opt:stage, 'dev'}
