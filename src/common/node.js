@@ -56,6 +56,7 @@ export async function createDistribution(context) {
 
     await execDockerNpm(newContext, "install", "--production")
     await handleExpressApp(newContext)
+    await rimraf(path.join(appPath, ".npm_cache"))
 
     const wolkeProxy = path.join(tmpDistPath, "wolke-proxy.js")
     await copyFile("/Users/bs5/Code/wolke-proxy/bin/wolke-proxy", wolkeProxy)
