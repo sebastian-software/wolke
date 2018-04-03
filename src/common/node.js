@@ -61,14 +61,6 @@ export async function createDistribution(context) {
     await copyFile("/Users/bs5/Code/wolke-proxy/bin/wolke-proxy", wolkeProxy)
     await makeExecutable(wolkeProxy)
 
-    const wolkeShell = path.join(tmpDistPath, "wolke-shell.sh")
-    await copyFile("/Users/bs5/Code/wolke-proxy/wolke-shell.sh", wolkeShell)
-    await makeExecutable(wolkeShell)
-
-    const wolkeNpmSimulation = path.join(tmpDistPath, "npm")
-    await copyFile("/Users/bs5/Code/wolke-proxy/npm-simulation.js", wolkeNpmSimulation)
-    await makeExecutable(wolkeNpmSimulation)
-
     await createServerlessConfig(tmpDistPath)
 
     return {
