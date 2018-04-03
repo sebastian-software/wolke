@@ -3,6 +3,7 @@ import chalk from "chalk"
 import { configurationAvailable, getConfiguration, printConfigurationErrors } from "../common/configuration"
 import { createDistribution } from "../common/node"
 import { appPkg } from "../common/appPackage"
+import { getVersion } from "../common/version"
 
 import { checkVersionDeployed } from "../common/lambda"
 import { runServerless } from "../common/serverless"
@@ -58,9 +59,11 @@ export default async function deployCommand(context) {
     )
   }
 
+  const version = await getVersion(context)
+
   const dist = await createDistribution(context)
 
-  const result = await runServerless(context, dist.context, dist.path, context.flags.stage)
+  const result = await runServerless(context, dist.context, dist.path, version.name)
 
   await ensureDnsSetting(result.domainName, result.distributionDomainName)
 
