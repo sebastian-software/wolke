@@ -24,9 +24,7 @@ const appInfo = ` running on ${chalk.bold.blue(appPkg.name)}-${appPkg.version}`
 const IS_INTERACTIVE = process.stdout.isTTY
 
 if (IS_INTERACTIVE) {
-  process.stdout.write(
-    process.platform === "win32" ? "\x1Bc" : "\x1B[2J\x1B[3J\x1B[H"
-  )
+  process.stdout.write(process.platform === "win32" ? "\x1Bc" : "\x1B[2J\x1B[3J\x1B[H")
 }
 
 AWSSDK.config.setPromisesDependency(require("bluebird")) // eslint-disable-line import/no-commonjs
@@ -35,7 +33,8 @@ console.log(chalk.bold(`WOLKE ${chalk.green(`v${pkg.version}`)}`) + appInfo)
 console.log()
 
 // Parse arguments
-const command = meow(`
+const command = meow(
+  `
   Usage:
     $ wolke [<command>]
 
@@ -57,13 +56,16 @@ const command = meow(`
     status             Show current state of deployments
     version            Print version number
 
-`, {
+`,
+  {
     alias: {
       v: "verbose",
       q: "quiet",
       h: "help"
-    }
-  })
+    },
+    autoVersion: false
+  }
+)
 
 const selectedTask = command.input[0] || "default"
 const flags = command.flags
@@ -78,17 +80,15 @@ updateNotifier({
 }).notify()
 
 // List of tasks we have available
-const availableTasks = new Map(
-  [
-    [ "default", defaultCommand ],
-    [ "init", initCommand ],
-    [ "cert", certCommand ],
-    [ "deploy", deployCommand ],
-    [ "release", releaseCommand ],
-    [ "status", statusCommand ],
-    [ "version", versionCommand ]
-  ]
-)
+const availableTasks = new Map([
+  [ "default", defaultCommand ],
+  [ "init", initCommand ],
+  [ "cert", certCommand ],
+  [ "deploy", deployCommand ],
+  [ "release", releaseCommand ],
+  [ "status", statusCommand ],
+  [ "version", versionCommand ]
+])
 
 // Prevent deprecation messages which should not be displayed to the end user
 if (!flags.verbose) {
