@@ -47,7 +47,9 @@ export async function exec(context, command, ...parameter) {
       }
     })
 
+    const errorChunks = []
     proc.stderr.on("data", (data) => {
+      errorChunks.push(data)
       readline.clearLine(process.stdout)
       readline.cursorTo(process.stdout, 0)
       const content = data
@@ -78,6 +80,7 @@ export async function exec(context, command, ...parameter) {
       resolve({
         code,
         content,
+        errorContent: Buffer.concat(errorChunks).toString("utf8"),
         json
       })
     })
