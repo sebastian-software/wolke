@@ -31,9 +31,9 @@ functions:
     warmup: production
 
 plugins:
+  - serverless-plugin-warmup
   - serverless-content-encoding
   - serverless-domain-manager
-  - serverless-plugin-warmup
 
 custom:
   domainNames:
@@ -85,13 +85,14 @@ function extractDDN(content) {
     .trim()
 }
 
-export async function runServerless(context, appContext, distPath, stage) {
+export async function runServerless(context, appContext, distPath, version) {
   const newContext = {
     ...context,
     cwd: distPath
   }
 
-  await exec(newContext, "sls", "create_domain")
+  const stage = "dev"
+  await exec(newContext, "sls", "create_domain", "--stage", stage)
   const result = await exec(newContext, "sls", "deploy", "--aws-s3-accelerate", "--stage", stage)
 
   const distributionDomainName = extractDDN(result.content)
