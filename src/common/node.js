@@ -5,9 +5,9 @@
 
 import path from "path"
 import tar from "tar"
-import filesystem from "fs"
+import filesystem, { realpathSync } from "fs"
 
-import { execNpm, execDockerNpm, mkdir, rimraf, copyFile, makeExecutable, fileWrite } from "./io"
+import { execNpm, execDockerNpm, mkdir, rimraf, copyFile, makeExecutable, fileWrite, readdir } from "./io"
 import { ROOT, appPkg } from "./appPackage"
 import { handleExpressApp } from "./lambda"
 import { getServerlessYmlContent } from "./serverless"
@@ -29,6 +29,20 @@ function unpack(tarFile, cwd, options = {}) {
 async function createServerlessConfig(basePath) {
   const serverlessYmlPath = path.join(basePath, "serverless.yml")
   await fileWrite(serverlessYmlPath, getServerlessYmlContent())
+}
+
+async function symlinkMapping(destJsonFile, basePath, symPath) {
+  const contentFiles = await readdir(symPath)
+
+  const content = contentFiles.reduce(
+    (prev, cur) => ({
+      ...prev,
+      [cur]: path.relative(basePath, realpathSync(path.join(symPath, cur)))
+    }),
+    {}
+  )
+
+  await fileWrite(destJsonFile, JSON.stringify(content))
 }
 
 export async function createDistribution(context) {
@@ -55,6 +69,13 @@ export async function createDistribution(context) {
     })
 
     await execDockerNpm(newContext, "install", "--production")
+
+    await symlinkMapping(
+      path.join(tmpDistPath, "symlink.json"),
+      appPath,
+      path.join(appPath, "./node_modules/.bin")
+    )
+
     await handleExpressApp(newContext)
     await rimraf(path.join(appPath, ".npm_cache"))
 
