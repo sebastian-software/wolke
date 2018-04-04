@@ -12,7 +12,8 @@
     "prepare": "npm run build",
     "build": "rimraf bin && rimraf lib && prepublish",
     "build:watch": "chokidar \"src/**/*.js\" --initial -c \"npm run build\"",
-    "test": "jest"
+    "test": "jest",
+    "lint": "eslint ./src/**/*.js"
   },
   "author": {
     "name": "Sebastian Fastner",
@@ -22,11 +23,7 @@
   "bin": {
     "wolke-proxy": "bin/wolke-proxy"
   },
-  "keywords": [
-    "aws",
-    "lambda",
-    "nodejs"
-  ],
+  "keywords": ["aws", "lambda", "nodejs"],
   "license": "Apache-2.0",
   "devDependencies": {
     "aws-serverless-express": "^3.1.3",

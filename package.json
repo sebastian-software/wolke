@@ -12,7 +12,7 @@
     "publish": "lerna publish",
     "build": "lerna run build",
     "test": "npm run build && npm run lint",
-    "lint": "eslint packages/**/src/**/*.js"
+    "lint": "lerna run lint"
   },
   "pre-commit": "lint-staged",
   "lint-staged": {
