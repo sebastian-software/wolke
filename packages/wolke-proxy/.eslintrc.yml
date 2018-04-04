@@ -1,8 +1,0 @@
-extends:
-  ./node_modules/readable-code/.eslintrc.yml
-rules:
-  no-console: 0
-  compat/compat: 0
-  max-params: 0
-  id-length: 0
-  complexity: 0
