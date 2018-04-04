@@ -1,6 +1,6 @@
-# *Wolke* <br/>[![Sponsored by][sponsor-img]][sponsor] [![Version][npm-version-img]][npm] [![Downloads][npm-downloads-img]][npm] [![Build Status Unix][travis-img]][travis] [![Build Status Windows][appveyor-img]][appveyor] [![Dependencies][deps-img]][deps]
+# _Wolke_ <br/>[![Sponsored by][sponsor-img]][sponsor] [![Version][npm-version-img]][npm] [![Downloads][npm-downloads-img]][npm] [![Build Status Unix][travis-img]][travis] [![Build Status Windows][appveyor-img]][appveyor] [![Dependencies][deps-img]][deps]
 
-> *Wolke* - An AWS Lambda deployment tool for NodeJS applications that is standing on the shoulders of giants.
+> _Wolke_ - An AWS Lambda deployment tool for NodeJS applications that is standing on the shoulders of giants.
 
 [sponsor-img]: https://img.shields.io/badge/Sponsored%20by-Sebastian%20Software-692446.svg
 [sponsor]: https://www.sebastian-software.de
@@ -16,16 +16,15 @@
 
 ## Usage
 
-- Run `npm init` to have a valid package.json project
-- Initialize wolke with `npx wolke`
+* Run `npm init` to have a valid package.json project
+* Initialize wolke with `npx wolke`
 
 ## License
 
 [Apache License; Version 2.0, January 2004](http://www.apache.org/licenses/LICENSE-2.0)
 
-
 ## Copyright
 
 <img src="https://raw.githubusercontent.com/sebastian-software/readable-code/master/assets/sebastiansoftware.png" alt="Sebastian Software GmbH Logo" width="250" height="200"/>
 
-Copyright 2017<br/>[Sebastian Software GmbH](http://www.sebastian-software.de)
+Copyright 2017-2018<br/>[Sebastian Software GmbH](http://www.sebastian-software.de)
