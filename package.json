@@ -10,7 +10,7 @@
     "install": "lerna bootstrap",
     "publish": "lerna publish",
     "build": "lerna run build",
-    "test": "npm run build",
+    "test": "npm run build && npm run lint",
     "lint": "eslint packages/**/src/**/*.js"
   },
   "pre-commit": "lint-staged",
