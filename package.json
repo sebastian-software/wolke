@@ -4,6 +4,8 @@
   },
   "scripts": {
     "install": "lerna bootstrap",
-    "publish": "lerna publish"
+    "publish": "lerna publish",
+    "build": "lerna run build",
+    "test": "npm run build"
   }
 }
