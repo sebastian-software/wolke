@@ -5,9 +5,9 @@ export async function findDistribution() {
   const configuration = await getConfiguration()
   AWSSDK.config.update({ region: configuration.value("awsRegion") })
 
-  const cloudfront = new AWSSDK.CloudFront({apiVersion: '2017-03-25'});
-  const apigateway = new AWSSDK.APIGateway({apiVersion: '2015-07-09'});
-/*
+  // const cloudfront = new AWSSDK.CloudFront({ apiVersion: "2017-03-25" })
+  const apigateway = new AWSSDK.APIGateway({ apiVersion: "2015-07-09" })
+  /*
   const results = (await apigateway.getDomainNames().promise()).items
 
   for (const domain of results) {
@@ -17,11 +17,13 @@ export async function findDistribution() {
   }
 */
 
-  const results = await apigateway.getMethod({
-    httpMethod: "ANY",
-    resourceId: "5ljssn",
-    restApiId: "bcu5zytycd"
-  }).promise()
+  const results = await apigateway
+    .getMethod({
+      httpMethod: "ANY",
+      resourceId: "5ljssn",
+      restApiId: "bcu5zytycd"
+    })
+    .promise()
 
   /*
   const results = await cloudfront.listDistributions().promise()
@@ -34,6 +36,6 @@ export async function findDistribution() {
 
   // const info = await cloudfront.getDistribution({ Id: origin.Id }).promise()
   console.log(">>>", JSON.stringify(results, null, 2))
-  //console.log(origin.DomainName)
-  //console.log(origin.Aliases)
+  // console.log(origin.DomainName)
+  // console.log(origin.Aliases)
 }

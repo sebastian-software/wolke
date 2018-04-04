@@ -31,7 +31,7 @@ export async function exec(context, command, ...parameter) {
       cwd: context.cwd || ROOT
     })
 
-    let chunks = []
+    const chunks = []
     proc.stdout.on("data", (data) => {
       chunks.push(data)
 
@@ -134,14 +134,13 @@ export function sleep(time) {
   })
 }
 
-export function fileAccessible(filename) {
-  return fileAccess(filename, filesystem.constants.R_OK)
-    .then((result) => {
-      return true
-    })
-    .catch((error) => {
-      return false
-    })
+export async function fileAccessible(filename) {
+  try {
+    await fileAccess(filename, filesystem.constants.R_OK)
+    return true
+  } catch (error) {
+    return false
+  }
 }
 
 export function writeContent(filename, content) {
@@ -179,7 +178,9 @@ export async function ensureContent(filename, lines, comparator = identityCompar
 
 export function copyFile(src, dst) {
   return new Promise((resolve, reject) => {
+    // eslint-disable-next-line security/detect-non-literal-fs-filename
     const dstStream = filesystem.createWriteStream(dst)
+    // eslint-disable-next-line security/detect-non-literal-fs-filename
     const srcStream = filesystem.createReadStream(src)
 
     srcStream
