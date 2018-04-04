@@ -22,10 +22,15 @@
   "bin": {
     "wolke": "bin/wolke"
   },
-  "keywords": ["aws", "lambda", "nodejs"],
+  "keywords": [
+    "aws",
+    "lambda",
+    "nodejs"
+  ],
   "license": "Apache-2.0",
   "devDependencies": {
     "chokidar-cli": "^1.2.0",
+    "eslint": "^4.19.1",
     "jest": "^21.2.1",
     "prepublish": "^1.5.2"
   },
