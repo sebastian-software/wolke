@@ -4,7 +4,7 @@
   "description": "Wolke proxy",
   "repository": {
     "type": "git",
-    "url": "https://github.com/sebastian-software/wolke-proxy"
+    "url": "https://github.com/sebastian-software/wolke"
   },
   "main": "lib/node.commonjs.js",
   "module": "lib/node.esmodules.js",
