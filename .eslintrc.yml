@@ -1,5 +1,5 @@
 extends:
-  ./node_modules/readable-code/.eslintrc.yml
+  - readable
 rules:
   no-console: 0
   compat/compat: 0
