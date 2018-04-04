@@ -80,7 +80,8 @@ export async function createDistribution(context) {
     await rimraf(path.join(appPath, ".npm_cache"))
 
     const wolkeProxy = path.join(tmpDistPath, "wolke-proxy.js")
-    await copyFile("/Users/bs5/Code/wolke-proxy/bin/wolke-proxy", wolkeProxy)
+    const wolkeProxyBase = path.join(ROOT, "node_modules", "wolke-proxy")
+    await copyFile(path.join(wolkeProxyBase, "bin", "wolke-proxy"), wolkeProxy)
     await makeExecutable(wolkeProxy)
 
     await createServerlessConfig(tmpDistPath)
