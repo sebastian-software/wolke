@@ -3,6 +3,7 @@
     "lerna": "^2.9.1"
   },
   "scripts": {
-    "install": "lerna bootstrap"
+    "install": "lerna bootstrap",
+    "publish": "lerna publish"
   }
 }
