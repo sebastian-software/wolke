@@ -95,6 +95,8 @@ export async function runServerless(context, appContext, distPath, version) {
   await exec(newContext, "sls", "create_domain", "--stage", stage)
   const result = await exec(newContext, "sls", "deploy", "--aws-s3-accelerate", "--stage", stage)
 
+  console.log(">>>", result)
+
   const distributionDomainName = extractDDN(result.content)
 
   if (stage === "production") {
