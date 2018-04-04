@@ -39,7 +39,6 @@
     "chokidar-cli": "^1.2.0",
     "jest": "^21.2.1",
     "prepublish": "^1.5.2",
-    "readable-code": "^3.4.15",
     "release-it": "^5.0.0"
   },
   "dependencies": {
