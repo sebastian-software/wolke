@@ -1,23 +1,11 @@
 import chalk from "chalk"
 import get from "lodash/get"
-import {
-  configurationAvailable,
-  getConfiguration,
-  printConfigurationErrors
-} from "../common/configuration"
+import { configurationAvailable, getConfiguration, printConfigurationErrors } from "../common/configuration"
 import initCommand from "./initCommand"
 
-import {
-  getCustomDomainNames,
-  getBasePathMappings,
-  getApiByName
-} from "../common/apiGateway"
-import {
-  getVersionNumber as getLambdaVersion
-} from "../common/lambda"
-import {
-  appPkg
-} from "../common/appPackage"
+import { getCustomDomainNames, getBasePathMappings, getApiByName } from "../common/apiGateway"
+import { getVersionNumber as getLambdaVersion } from "../common/lambda"
+import { appPkg } from "../common/appPackage"
 
 function outputStage(data, stage) {
   const d = get(data, stage)
@@ -29,6 +17,9 @@ function outputStage(data, stage) {
 }
 
 export default async function statusCommand(context) {
+  console.log(chalk.red("wolke status is currently not implemented"))
+  return 1
+
   if (!await configurationAvailable()) {
     return await initCommand(context)
   }
@@ -48,31 +39,27 @@ export default async function statusCommand(context) {
 
   const restApiId = api.id
 
-  const customDomainNames = (await getCustomDomainNames())
-    .items
-    .map((item) => ({
-      domainName: item.domainName,
-      distributionDomainName: item.distributionDomainName
-    }))
+  const customDomainNames = (await getCustomDomainNames()).items.map((item) => ({
+    domainName: item.domainName,
+    distributionDomainName: item.distributionDomainName
+  }))
 
   const basePathMappings = (await Promise.all(
-    customDomainNames.map(
-      (item) => getBasePathMappings(item.domainName)
-        .then((basePathMapping) => ({
-          ...item,
-          stage: get(basePathMapping, "items[0].stage"),
-          restApiId: get(basePathMapping, "items[0].restApiId")
-        }))
+    customDomainNames.map((item) =>
+      getBasePathMappings(item.domainName).then((basePathMapping) => ({
+        ...item,
+        stage: get(basePathMapping, "items[0].stage"),
+        restApiId: get(basePathMapping, "items[0].restApiId")
+      }))
     )
   )).filter((item) => item.restApiId === restApiId)
 
   const lambdaDeployments = await Promise.all(
-    basePathMappings.map(
-      (item) => getLambdaVersion(`wolke-${appPkg.name}`, item.stage)
-        .then((lambdaVersion) => ({
-          ...item,
-          version: lambdaVersion.FunctionVersion
-        }))
+    basePathMappings.map((item) =>
+      getLambdaVersion(`wolke-${appPkg.name}`, item.stage).then((lambdaVersion) => ({
+        ...item,
+        version: lambdaVersion.FunctionVersion
+      }))
     )
   )
 

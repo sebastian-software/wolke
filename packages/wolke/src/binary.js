@@ -51,9 +51,9 @@ const command = meow(
     cert               Checks and initialize certificate configuration
 
     deploy             Deploy app to development stage
-    release            Deploy current development stage to production
+    release            Deploy current development stage to production (TODO)
 
-    status             Show current state of deployments
+    status             Show current state of deployments (TODO)
     version            Print version number
 
 `,

@@ -7,26 +7,17 @@ import {
   printConfigurationErrors,
   getClaudiaConfig
 } from "../common/configuration"
-import {
-  execClaudia
-} from "../common/io"
-import {
-  findZone,
-  findDnsRecord,
-  updateDnsRecord,
-  createDnsRecord
-} from "../common/cloudflare"
-import {
-  assignPathToDomain,
-  domainToZone
-} from "../common/domain"
-import {
-  getCertIdForDomain
-} from "../common/cert"
+import { execClaudia } from "../common/io"
+import { findZone, findDnsRecord, updateDnsRecord, createDnsRecord } from "../common/cloudflare"
+import { assignPathToDomain, domainToZone } from "../common/domain"
+import { getCertIdForDomain } from "../common/cert"
 import initCommand from "./initCommand"
 import certCommand from "./certCommand"
 
 export default async function releaseCommand(context) {
+  console.log(chalk.red("wolke release is currently not implemented"))
+  return 1
+
   let spinner
 
   if (!await configurationAvailable()) {
@@ -43,12 +34,7 @@ export default async function releaseCommand(context) {
 
   spinner = ora("Start release process").start()
 
-  const claudiaExitCode = await execClaudia(
-    context,
-    "set-version",
-    "--version",
-    "production"
-  )
+  const claudiaExitCode = await execClaudia(context, "set-version", "--version", "production")
 
   if (claudiaExitCode.code > 0) {
     spinner.fail("Could not set current version to production")
@@ -79,23 +65,15 @@ export default async function releaseCommand(context) {
     const dnsRecord = await findDnsRecord(zone, result.domainName)
     if (dnsRecord) {
       spinner.text = "Update DNS record"
-      await updateDnsRecord(
-        zone,
-        dnsRecord,
-        {
-          cname: result.distributionDomainName
-        }
-      )
+      await updateDnsRecord(zone, dnsRecord, {
+        cname: result.distributionDomainName
+      })
       spinner.succeed("DNS record updated")
     } else {
       spinner.text = "Create DNS record"
-      await createDnsRecord(
-        zone,
-        result.domainName,
-        {
-          cname: result.distributionDomainName
-        }
-      )
+      await createDnsRecord(zone, result.domainName, {
+        cname: result.distributionDomainName
+      })
       spinner.succeed("DNS record created")
     }
 
