@@ -72,4 +72,6 @@ export async function createFunctionAsService(name, version, distFile) {
   return lambdaFnt
 }
 
-export async function handleExpressApp(context) {}
+export async function handleExpressApp(context) {
+  // noop
+}
