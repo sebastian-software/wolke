@@ -34,7 +34,7 @@ const AWS_ZONES = [
   "sa-east-1"
 ]
 
-function parseDefaultDistPath(modulePath, mainPath) {
+function _parseDefaultDistPath(modulePath, mainPath) {
   const distPath = modulePath || mainPath
 
   if (!distPath) return "."
@@ -102,7 +102,7 @@ export default async function initCommand(context) {
       type: "input",
       name: "distPath",
       message: "Path to distribution output",
-      default: parseDefaultDistPath(appPkg.module, appPkg.main)
+      default: _parseDefaultDistPath(appPkg.module, appPkg.main)
     }, */
 
     {

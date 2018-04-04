@@ -1,3 +1,4 @@
+/* eslint-disable no-template-curly-in-string */
 import AWSSDK from "aws-sdk"
 import get from "lodash/get"
 
@@ -136,7 +137,8 @@ export async function createOrGetProxyMethods(restApiId, proxyResource) {
     type: "AWS_PROXY",
     httpMethod: "POST",
     uri:
-      "arn:aws:apigateway:eu-central-1:lambda:path/2015-03-31/functions/arn:aws:lambda:eu-central-1:759216673650:function:example:${stageVariables.lambdaVersion}/invocations",
+      "arn:aws:apigateway:eu-central-1:lambda:path/2015-03-31/functions/arn:aws:lambda:eu-central-1" +
+      ":759216673650:function:example:${stageVariables.lambdaVersion}/invocations",
     passthroughBehavior: "WHEN_NO_MATCH",
     timeoutInMillis: 29000,
     cacheNamespace: proxyResource.id,

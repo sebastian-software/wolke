@@ -1,3 +1,4 @@
+/* eslint-disable no-unreachable */
 import chalk from "chalk"
 import get from "lodash/get"
 import { configurationAvailable, getConfiguration, printConfigurationErrors } from "../common/configuration"

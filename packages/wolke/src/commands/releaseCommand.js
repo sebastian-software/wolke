@@ -1,3 +1,4 @@
+/* eslint-disable no-unreachable */
 import chalk from "chalk"
 import ora from "ora"
 
