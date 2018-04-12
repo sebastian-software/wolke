@@ -26,9 +26,16 @@ export async function exec(context, command, ...parameter) {
 
   if (context.flags.verbose) console.log(chalk.yellow(command, ...parameter))
 
+  const contextEnv = context.env || {}
+  const env = {
+    ...process.env,
+    ...contextEnv
+  }
+
   return new Promise((resolve) => {
     const proc = spawn(absoluteCommand, parameter, {
-      cwd: context.cwd || ROOT
+      cwd: context.cwd || ROOT,
+      env
     })
 
     const chunks = []
