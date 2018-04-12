@@ -1,6 +1,6 @@
 import { appPkg } from "./appPackage"
 import { exec } from "./io"
-import { valid, getMajor } from "semver"
+import { valid, major } from "semver"
 
 function getMajorVersion(versionStr) {
   if (!versionStr) {
@@ -11,7 +11,7 @@ function getMajorVersion(versionStr) {
     return 0
   }
 
-  return getMajor(versionStr)
+  return major(versionStr)
 }
 
 export async function getVersion(context) {
