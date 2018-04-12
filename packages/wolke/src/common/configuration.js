@@ -2,16 +2,18 @@ import chalk from "chalk"
 import { appPkg, ROOT } from "./appPackage"
 import get from "lodash/get"
 import Promise from "bluebird"
-import filesystem from "fs"
-import path from "path"
+import * as filesystem from "fs"
+import * as path from "path"
 
 const readFile = Promise.promisify(filesystem.readFile) // eslint-disable-line
 
 function checkCloudflareEnvironment() {
-  return "CLOUDFLARE_EMAIL" in process.env &&
+  return (
+    "CLOUDFLARE_EMAIL" in process.env &&
     process.env.CLOUDFLARE_EMAIL.length > 0 &&
     "CLOUDFLARE_TOKEN" in process.env &&
     process.env.CLOUDFLARE_TOKEN.length > 0
+  )
 }
 
 export async function configurationAvailable() {
@@ -36,9 +38,7 @@ export function printConfigurationErrors(configuration) {
 
 export async function getClaudiaConfig(key) {
   try {
-    const config = JSON.parse(
-      await readFile(path.join(ROOT, "claudia.json"), "utf8")
-    )
+    const config = JSON.parse(await readFile(path.join(ROOT, "claudia.json"), "utf8"))
 
     return get(config, key)
   } catch (error) {

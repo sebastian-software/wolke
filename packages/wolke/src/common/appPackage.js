@@ -1,6 +1,6 @@
 import { get as getRoot } from "app-root-dir"
 import merge from "lodash/merge"
-import fs from "fs"
+import * as fs from "fs"
 
 export const ROOT = getRoot()
 
@@ -20,8 +20,7 @@ function writeFile(fileName, content) {
   return new Promise((resolve, reject) => {
     // eslint-disable-next-line security/detect-non-literal-fs-filename
     fs.writeFile(fileName, content, "utf8", (err) => {
-      if (err)
-        return reject(err)
+      if (err) return reject(err)
 
       return resolve()
     })

@@ -3,9 +3,9 @@
  */
 /* eslint-disable security/detect-non-literal-fs-filename, max-statements */
 
-import path from "path"
+import * as path from "path"
 import tar from "tar"
-import filesystem, { realpathSync } from "fs"
+import { realpathSync, createReadStream } from "fs"
 
 import { execNpm, execDockerNpm, mkdir, rimraf, copyFile, makeExecutable, fileWrite, readdir } from "./io"
 import { ROOT, appPkg } from "./appPackage"
@@ -14,8 +14,7 @@ import { getServerlessYmlContent } from "./serverless"
 
 function unpack(tarFile, cwd, options = {}) {
   return new Promise((resolve) => {
-    filesystem
-      .createReadStream(tarFile)
+    createReadStream(tarFile)
       .pipe(
         tar.x({
           ...options,
