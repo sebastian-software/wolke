@@ -63,7 +63,7 @@ export default async function deployCommand(context) {
 
   const dist = await createDistribution(context)
 
-  const result = await runServerless(context, dist.context, dist.path, version.name)
+  const result = await runServerless(context, dist.context, dist.path, version)
 
   await ensureDnsSetting(result.domainName, result.distributionDomainName)
 
