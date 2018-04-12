@@ -1,5 +1,18 @@
 import { appPkg } from "./appPackage"
 import { exec } from "./io"
+import { valid, getMajor } from "semver"
+
+function getMajorVersion(versionStr) {
+  if (!versionStr) {
+    return 0
+  }
+
+  if (!valid(versionStr)) {
+    return 0
+  }
+
+  return getMajor(versionStr)
+}
 
 export async function getVersion(context) {
   const clVersion = context.flags.deployVersion
@@ -19,8 +32,11 @@ export async function getVersion(context) {
     gitVersion = null
   }
 
+  const version = clVersion || appPkg.version
+
   return {
-    name: clVersion ? clVersion : appPkg.version.replace(/\./g, "x"),
+    name: `v${getMajorVersion(version)}`,
+    version,
     hash: gitVersion
   }
 }
