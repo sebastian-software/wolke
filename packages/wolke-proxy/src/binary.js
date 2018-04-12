@@ -49,7 +49,7 @@ function mapApiGatewayEventToHttpRequest(event, context, server) {
 }
 
 function forwardResponseToApiGateway(server, response, context) {
-  let buf = []
+  const buf = []
 
   response.on("data", (chunk) => buf.push(chunk)).on("end", () => {
     const bodyBuffer = Buffer.concat(buf)
@@ -262,7 +262,7 @@ function forwardRequestToApp(server, event, context) {
   }
 }
 
-let forwardServer = {
+const forwardServer = {
   _binaryTypes: []
 }
 
