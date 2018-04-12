@@ -33,9 +33,11 @@ export async function getVersion(context) {
   }
 
   const version = clVersion || appPkg.version
+  const majorVersion = getMajorVersion(version)
 
   return {
-    name: `v${getMajorVersion(version)}`,
+    name: `v${majorVersion}`,
+    majorVersion,
     version,
     hash: gitVersion
   }
