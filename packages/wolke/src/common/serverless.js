@@ -29,11 +29,14 @@ functions:
       - http: ANY /
       - http: 'ANY {proxy+}'
     warmup: production
+    environment:
+      GIT_HASH: "\${env:GIT_HASH}"
 
 plugins:
   - serverless-plugin-warmup
   - serverless-content-encoding
   - serverless-domain-manager
+  - serverless-prune-plugin
 
 custom:
   domainNames:
@@ -60,6 +63,10 @@ custom:
   warmup:
     timeout: \${self:provider.timeout}
     prewarm: true
+
+  prune:
+    automatic: true
+    number: 5
   `
 }
 
@@ -88,10 +95,13 @@ function extractDDN(content) {
 export async function runServerless(context, appContext, distPath, version) {
   const newContext = {
     ...context,
-    cwd: distPath
+    cwd: distPath,
+    env: {
+      GIT_HASH: version.hash
+    }
   }
 
-  const stage = "dev"
+  const stage = version.name
   await exec(newContext, "sls", "create_domain", "--stage", stage)
   const result = await exec(newContext, "sls", "deploy", "--aws-s3-accelerate", "--stage", stage)
 
