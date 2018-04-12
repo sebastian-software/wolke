@@ -14,6 +14,7 @@ const DEPS = [
   "serverless-plugin-custom-domain",
   "serverless-plugin-warmup",
   "serverless-apigw-binary",
+  "serverless-prune-plugin",
   "wolke"
 ]
 
