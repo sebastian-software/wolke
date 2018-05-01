@@ -1,6 +1,6 @@
 {
   "name": "wolke-proxy",
-  "version": "0.6.3",
+  "version": "0.6.4",
   "description": "Wolke proxy",
   "repository": {
     "type": "git",
@@ -23,7 +23,11 @@
   "bin": {
     "wolke-proxy": "bin/wolke-proxy"
   },
-  "keywords": ["aws", "lambda", "nodejs"],
+  "keywords": [
+    "aws",
+    "lambda",
+    "nodejs"
+  ],
   "license": "Apache-2.0",
   "devDependencies": {
     "aws-serverless-express": "^3.1.3",
