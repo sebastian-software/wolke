@@ -19,6 +19,10 @@
 * Run `npm init` to have a valid package.json project
 * Initialize wolke with `npx wolke`
 
+## Documentation
+
+See [full documentation](docs/wolke.asciidoc)
+
 ## License
 
 [Apache License; Version 2.0, January 2004](http://www.apache.org/licenses/LICENSE-2.0)

@@ -1,0 +1,85 @@
+= Wolke documentation
+Author Sebastian Fastner <s.fastner@sebastian-software.de>
+Version 0.7
+:toc: left
+
+WARNING: This is documentation for an upcoming version of wolke.
+
+== Prerequisites
+
+* _Wolke_ uses link:https://nodejs.org[Node.js] as execution platform
+* _Wolke_ uses AWS as target cloud platform, please link:https://docs.aws.amazon.com/cli/latest/userguide/installing.html[install] and link:https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-started.html[configure] the toolset
+* _Wolke_ uses link:https://www.cloudflare.com[Cloudflare] as DNS server and CDN, so if you want to use custom domains please setup a free account
+* _Wolke_ uses link:https://www.docker.com[Docker] to compile native Node.js dependencies for deployment
+
+== Features
+
+* Easy deployment of Node.js frontend applications to AWS
+** Operating system agnostic (dependencies compiled via Docker if local environment not matching AWS linux)
+** Node.js application binds to given port via environment variable
+* Handling of mass deployments for testing while having one production version ready for users
+* Easy rollback and version handling
+
+== Installation
+
+Please make sure you first install and set up all <<Prerequisites>>.
+
+We are big fans of having all dependencies of a project inside of the project configuration. So first of all start with setting up a valid `package.json` file.
+
+[source]
+-----
+# npm init
+-----
+
+Okay, that was easy. Now add _Wolke_ to developer dependencies and set up _Wolke_ configuration file.
+
+[source]
+-----
+# npx wolke
+-----
+
+This command starts _Wolke_ set up wizard. Now you have a ready to deploy Node.js application - that does nothing. For a full feature React frontend app see link:https://github.com/sebastian-software/edge[_Edge Platform_]. Otherwise go on to <<Getting started>> .
+
+== Getting started
+
+We are writing a small application that returns all headers and the request path inside of HTML.
+
+NOTE: to be continued...
+
+== CLI commands
+
+You can execute _Wolke_ command line interface by running `./node_modules/.bin/wolke` inside your project folder.
+
+=== init
+
+`wolke init` initializes your project to be deployed by _Wolke_. This is also executed when `npx wolke` is started.
+
+Decide of the primary target AWS region. For this ask yourself where are your users located. Also data protection rules may play a role.
+
+Setting a development stage domain name is optional. This one is meant as wildcard domain. If you enter `example.com` here your deployment will get URLs like `test1234.example.com`.
+
+Setting a production stage domain name is also optional. This domain name is used as it to access your production build.
+
+Email and API token of cloudflare account is required to set up domain names pointing to correct AWS endpoints.
+
+Now all dependencies are added to `package.json` and installed.
+
+=== cert
+
+`wolke cert` checks if HTTPS certificates are correctly assigned. If not they are requested. The domain owner will get several email for each domain name that has to be approved.
+
+=== deploy
+
+`wolke deploy` build and deploys current code to the cloud. It executes `npm run build` first and then packs the application via `npm pack`. This clean app package is then unpacked inside a docker instance to execute `npm install --production` in the target processor architecture. This application including all dependencies is then uploaded to AWS. After configuration of DNS a deployment URL (based upon development stage domain name) is returned where the app is accessible.
+
+=== release
+
+`wolke release` lists last deployed versions of the app and allows to select which one should become production stage domain name accessible. This can also be used to rollback to a former version. In case of a step forward in version number the transition from former production version to new production version can be a slow transition over time to check for errors in the real world. A rollback is always immediately.
+
+=== status
+
+`wolke status` returns status of application in cloud context.
+
+=== version
+
+`wolke version` returns version number of wolke itself.
