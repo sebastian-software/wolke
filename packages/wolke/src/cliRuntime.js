@@ -1,5 +1,4 @@
 /* eslint-disable no-console */
-console.log(4567)
 import meow from "meow"
 import chalk from "chalk"
 import updateNotifier from "update-notifier"
