@@ -278,6 +278,7 @@ export function handler(event, context) {
     console.log("Forward request", event, context)
     forwardRequestToApp(forwardServer, event, context)
   } else {
+    // eslint-disable-next-line promise/prefer-await-to-then
     startedServer.then(() => handler(event, context)).catch((error) => console.error("error", error))
   }
 }
