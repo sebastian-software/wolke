@@ -1,6 +1,6 @@
 {
   "name": "wolke",
-  "version": "0.6.4",
+  "version": "0.6.5",
   "description": "Easy javascript deployment into the cloud",
   "repository": {
     "type": "git",
