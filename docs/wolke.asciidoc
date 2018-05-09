@@ -86,6 +86,6 @@ Now all dependencies are added to `package.json` and installed.
 
 
 
-== System architecture
+== System components
 
-image:diagrams/architecture.svg["System Architecture",height=600]
+image:diagrams/components.svg["System Components",height=600]
