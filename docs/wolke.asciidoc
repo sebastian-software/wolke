@@ -83,3 +83,9 @@ Now all dependencies are added to `package.json` and installed.
 === version
 
 `wolke version` returns version number of wolke itself.
+
+
+
+== System architecture
+
+image:diagrams/architecture.svg[System Architecture]
