@@ -60,7 +60,7 @@ Setting a development stage domain name is optional. This one is meant as wildca
 
 Setting a production stage domain name is also optional. This domain name is used as it to access your production build.
 
-Email and API token of cloudflare account is required to set up domain names pointing to correct AWS endpoints.
+Email and API token of Cloudflare account is required to set up domain names pointing to correct AWS endpoints.
 
 Now all dependencies are added to `package.json` and installed.
 
@@ -89,3 +89,36 @@ Now all dependencies are added to `package.json` and installed.
 == System components
 
 image:diagrams/components.svg["System Components",height=600]
+
+== Configuration
+
+The configuration file of _Wolke_ is named `wolke.yml`. This file should be committed to your source repository. Some configuration settings are also written to `.env` file. These settings should not be published to other people as it contains secrets. To prevent accidentally committing this file it is added to your projects `.gitignore` file.
+
+=== Settings in `.env` file
+
+[options="header"]
+[frame="topbot",grid="none",format="csv"]
+|=======================
+Parameter, Description
+CLOUDFLARE_EMAIL,Email of Cloudflare user
+CLOUDFLARE_TOKEN,Token generated in link:https://www.cloudflare.com/a/profile[Cloudflare dashboard]
+|=======================
+
+=== Settings in `wolke.yml` file
+
+[options="header"]
+[frame="topbot",grid="none",format="csv"]
+|=======================
+Parameter, Description
+awsRegion,AWS Region of main deployment
+
+developmentDomain,Wildcard domain name that is used for non production deployments (e.g. test.example.com leads to something like testapp-cd34f67.test.example.com)
+
+productionDomain,Domain name for production version of application
+|=======================
+
+== Under the hood
+
+_SAM_ is the new standard way to describe serverless software configuration. _Wolke_ is a more or less small wrapper around _SAM_. It supports users to handle different tasks that are usually executed during lifespan of an application.
+
+_Wolke_ has an opinion about how applications should be deployed to development and production stages. Deployed versions of the application should be accessible by domain names without additional paths. Most applications don't support URL path prefixes.
