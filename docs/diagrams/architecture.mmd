@@ -1,0 +1,18 @@
+graph TD;
+
+    internet((Internet))
+    cloudflare[<center>Cloudflare</center><br />DNS-Server, CDN and Proxy]
+    cloudfront[Cloudfront<center>CDN</center>]
+    api[API Gateway]
+    lambda[Lambda]
+
+    internet --> cloudflare
+    cloudflare --> cloudfront
+    cloudfront --> api
+    api --> lambda
+
+    classDef light fill:#fef7f0,stroke:#612943;
+    classDef bold fill:#f7cb76,stroke:#482935;
+
+    class internet bold
+    class cloudflare,cloudfront,api,lambda light

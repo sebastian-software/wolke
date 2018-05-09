@@ -1,0 +1,21 @@
+graph TD;
+    browser[User browser]
+    cloudflare[DNS + CDN Cloudflare]
+    cloudfront[CDN Cloudfront]
+    api[API Gateway]
+    lambda1(Lambda Version 1)
+    lambda2(Lambda Version 2)
+    lambda3(Lambda Version 3)
+
+    browser -- 1. Request test1234.example.com --> cloudflare
+    cloudflare -- 2. resolve test1234.example.com to cloudfront url--> cloudfront
+    cloudfront -- 3. proxy --> api
+    api -.-> lambda1
+    api -.-> lambda2
+    api -- 4. resolve url to lambda version --> lambda3
+
+    classDef light fill:#fef7f0,stroke:#612943;
+    classDef bold fill:#f7cb76,stroke:#482935;
+
+    class browser bold
+    class cloudflare,cloudfront,api,lambda1,lambda2,lambda3 light
