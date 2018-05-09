@@ -1,0 +1,21 @@
+sequenceDiagram
+  participant bsr as Browser
+  participant cflare as Cloudflare
+  participant cfront as Cloudfront
+  participant api as API Gateway
+  participant lbd as Lambda
+
+  bsr->>cflare: Give me IP of test-cde123.wolke.run
+  cflare->>bsr: Just use 10.1.55.234
+
+  bsr->>cflare: This is you, give me content
+  Note over bsr,cflare: If cached in CDN, content is<br />directly returned to Browser
+  cflare->>cfront: Give me content of test-cde123.wolke.run
+  cfront->>api: Give me content of test-cde123.wolke.run
+  api->>api: test-cde123.wolke.run is Lamda test/version 23
+  api->>lbd: Execute lambda test version 23
+
+  lbd->>api: Content of lambda call
+  api->>cfront: Content of lambda call
+  cfront->>cflare: Content of lambda call
+  cflare->>bsr: Content of lambda call

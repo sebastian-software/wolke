@@ -86,9 +86,7 @@ Now all dependencies are added to `package.json` and installed.
 
 
 
-== System components
 
-image:diagrams/components.svg["System Components",height=600]
 
 == Configuration
 
@@ -122,3 +120,11 @@ productionDomain,Domain name for production version of application
 _SAM_ is the new standard way to describe serverless software configuration. _Wolke_ is a more or less small wrapper around _SAM_. It supports users to handle different tasks that are usually executed during lifespan of an application.
 
 _Wolke_ has an opinion about how applications should be deployed to development and production stages. Deployed versions of the application should be accessible by domain names without additional paths. Most applications don't support URL path prefixes.
+
+=== System components
+
+image:diagrams/components.svg["System Components",height=600]
+
+=== How a browser request is handled
+
+image:diagrams/userRequest.svg["How a user request is handled"]
