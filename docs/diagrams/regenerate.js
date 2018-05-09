@@ -44,7 +44,8 @@ async function renderGraph(definition) {
   )
   const svg = await page.$eval("#container", (container) => container.innerHTML)
   await browser.close()
-  return svg
+
+  return svg.replace(/<br>/g, "<br />")
 }
 
 function readFile(path) {
@@ -72,13 +73,13 @@ function writeFile(path, content) {
   })
 }
 
-glob(path.join(__dirname, "./*.mermaid"), async (error, files) => {
+glob(path.join(__dirname, "./*.mmd"), async (error, files) => {
   for (const file of files) {
     console.log(file)
     const graphDefinition = await readFile(file)
     const svg = await renderGraph(graphDefinition)
 
-    const svgFilename = file.replace(".mermaid", ".svg")
+    const svgFilename = file.replace(".mmd", ".svg")
     await writeFile(svgFilename, svg)
     console.log(svgFilename, "written")
   }
