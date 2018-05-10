@@ -1,40 +1,40 @@
-<svg id="mermaid-1525877718807" width="100%" xmlns="http://www.w3.org/2000/svg" height="100%" style="max-width:1050px;" viewBox="-50 -10 1050 638"><style>
+<svg id="mermaid-1525985010674" width="100%" xmlns="http://www.w3.org/2000/svg" height="100%" style="max-width:1050px;" viewBox="-50 -10 1050 638"><style>
 
 
-#mermaid-1525877718807 .label {
+#mermaid-1525985010674 .label {
   font-family: 'trebuchet ms', verdana, arial;
   color: #333; }
 
-#mermaid-1525877718807 .node rect,
-#mermaid-1525877718807 .node circle,
-#mermaid-1525877718807 .node ellipse,
-#mermaid-1525877718807 .node polygon {
+#mermaid-1525985010674 .node rect,
+#mermaid-1525985010674 .node circle,
+#mermaid-1525985010674 .node ellipse,
+#mermaid-1525985010674 .node polygon {
   fill: #ECECFF;
   stroke: #9370DB;
   stroke-width: 1px; }
 
-#mermaid-1525877718807 .node.clickable {
+#mermaid-1525985010674 .node.clickable {
   cursor: pointer; }
 
-#mermaid-1525877718807 .arrowheadPath {
+#mermaid-1525985010674 .arrowheadPath {
   fill: #333333; }
 
-#mermaid-1525877718807 .edgePath .path {
+#mermaid-1525985010674 .edgePath .path {
   stroke: #333333;
   stroke-width: 1.5px; }
 
-#mermaid-1525877718807 .edgeLabel {
+#mermaid-1525985010674 .edgeLabel {
   background-color: #e8e8e8; }
 
-#mermaid-1525877718807 .cluster rect {
+#mermaid-1525985010674 .cluster rect {
   fill: #ffffde !important;
   stroke: #aaaa33 !important;
   stroke-width: 1px !important; }
 
-#mermaid-1525877718807 .cluster text {
+#mermaid-1525985010674 .cluster text {
   fill: #333; }
 
-#mermaid-1525877718807 div.mermaidTooltip {
+#mermaid-1525985010674 div.mermaidTooltip {
   position: absolute;
   text-align: center;
   max-width: 200px;
@@ -47,304 +47,307 @@
   pointer-events: none;
   z-index: 100; }
 
-#mermaid-1525877718807 .actor {
+#mermaid-1525985010674 .actor {
   stroke: #CCCCFF;
   fill: #ECECFF; }
 
-#mermaid-1525877718807 text.actor {
+#mermaid-1525985010674 text.actor {
   fill: black;
   stroke: none; }
 
-#mermaid-1525877718807 .actor-line {
+#mermaid-1525985010674 .actor-line {
   stroke: grey; }
 
-#mermaid-1525877718807 .messageLine0 {
+#mermaid-1525985010674 .messageLine0 {
   stroke-width: 1.5;
   stroke-dasharray: '2 2';
   marker-end: 'url(#arrowhead)';
   stroke: #333; }
 
-#mermaid-1525877718807 .messageLine1 {
+#mermaid-1525985010674 .messageLine1 {
   stroke-width: 1.5;
   stroke-dasharray: '2 2';
   stroke: #333; }
 
-#mermaid-1525877718807 #arrowhead {
+#mermaid-1525985010674 #arrowhead {
   fill: #333; }
 
-#mermaid-1525877718807 #crosshead path {
+#mermaid-1525985010674 #crosshead path {
   fill: #333 !important;
   stroke: #333 !important; }
 
-#mermaid-1525877718807 .messageText {
+#mermaid-1525985010674 .messageText {
   fill: #333;
   stroke: none; }
 
-#mermaid-1525877718807 .labelBox {
+#mermaid-1525985010674 .labelBox {
   stroke: #CCCCFF;
   fill: #ECECFF; }
 
-#mermaid-1525877718807 .labelText {
+#mermaid-1525985010674 .labelText {
   fill: black;
   stroke: none; }
 
-#mermaid-1525877718807 .loopText {
+#mermaid-1525985010674 .loopText {
   fill: black;
   stroke: none; }
 
-#mermaid-1525877718807 .loopLine {
+#mermaid-1525985010674 .loopLine {
   stroke-width: 2;
   stroke-dasharray: '2 2';
   marker-end: 'url(#arrowhead)';
   stroke: #CCCCFF; }
 
-#mermaid-1525877718807 .note {
+#mermaid-1525985010674 .note {
   stroke: #aaaa33;
   fill: #fff5ad; }
 
-#mermaid-1525877718807 .noteText {
+#mermaid-1525985010674 .noteText {
   fill: black;
   stroke: none;
   font-family: 'trebuchet ms', verdana, arial;
   font-size: 14px; }
 
 
-#mermaid-1525877718807 .section {
+#mermaid-1525985010674 .section {
   stroke: none;
   opacity: 0.2; }
 
-#mermaid-1525877718807 .section0 {
+#mermaid-1525985010674 .section0 {
   fill: rgba(102, 102, 255, 0.49); }
 
-#mermaid-1525877718807 .section2 {
+#mermaid-1525985010674 .section2 {
   fill: #fff400; }
 
-#mermaid-1525877718807 .section1,
-#mermaid-1525877718807 .section3 {
+#mermaid-1525985010674 .section1,
+#mermaid-1525985010674 .section3 {
   fill: white;
   opacity: 0.2; }
 
-#mermaid-1525877718807 .sectionTitle0 {
+#mermaid-1525985010674 .sectionTitle0 {
   fill: #333; }
 
-#mermaid-1525877718807 .sectionTitle1 {
+#mermaid-1525985010674 .sectionTitle1 {
   fill: #333; }
 
-#mermaid-1525877718807 .sectionTitle2 {
+#mermaid-1525985010674 .sectionTitle2 {
   fill: #333; }
 
-#mermaid-1525877718807 .sectionTitle3 {
+#mermaid-1525985010674 .sectionTitle3 {
   fill: #333; }
 
-#mermaid-1525877718807 .sectionTitle {
+#mermaid-1525985010674 .sectionTitle {
   text-anchor: start;
   font-size: 11px;
   text-height: 14px; }
 
 
-#mermaid-1525877718807 .grid .tick {
+#mermaid-1525985010674 .grid .tick {
   stroke: lightgrey;
   opacity: 0.3;
   shape-rendering: crispEdges; }
 
-#mermaid-1525877718807 .grid path {
+#mermaid-1525985010674 .grid path {
   stroke-width: 0; }
 
 
-#mermaid-1525877718807 .today {
+#mermaid-1525985010674 .today {
   fill: none;
   stroke: red;
   stroke-width: 2px; }
 
 
 
-#mermaid-1525877718807 .task {
+#mermaid-1525985010674 .task {
   stroke-width: 2; }
 
-#mermaid-1525877718807 .taskText {
+#mermaid-1525985010674 .taskText {
   text-anchor: middle;
   font-size: 11px; }
 
-#mermaid-1525877718807 .taskTextOutsideRight {
+#mermaid-1525985010674 .taskTextOutsideRight {
   fill: black;
   text-anchor: start;
   font-size: 11px; }
 
-#mermaid-1525877718807 .taskTextOutsideLeft {
+#mermaid-1525985010674 .taskTextOutsideLeft {
   fill: black;
   text-anchor: end;
   font-size: 11px; }
 
 
-#mermaid-1525877718807 .taskText0,
-#mermaid-1525877718807 .taskText1,
-#mermaid-1525877718807 .taskText2,
-#mermaid-1525877718807 .taskText3 {
+#mermaid-1525985010674 .taskText0,
+#mermaid-1525985010674 .taskText1,
+#mermaid-1525985010674 .taskText2,
+#mermaid-1525985010674 .taskText3 {
   fill: white; }
 
-#mermaid-1525877718807 .task0,
-#mermaid-1525877718807 .task1,
-#mermaid-1525877718807 .task2,
-#mermaid-1525877718807 .task3 {
+#mermaid-1525985010674 .task0,
+#mermaid-1525985010674 .task1,
+#mermaid-1525985010674 .task2,
+#mermaid-1525985010674 .task3 {
   fill: #8a90dd;
   stroke: #534fbc; }
 
-#mermaid-1525877718807 .taskTextOutside0,
-#mermaid-1525877718807 .taskTextOutside2 {
+#mermaid-1525985010674 .taskTextOutside0,
+#mermaid-1525985010674 .taskTextOutside2 {
   fill: black; }
 
-#mermaid-1525877718807 .taskTextOutside1,
-#mermaid-1525877718807 .taskTextOutside3 {
+#mermaid-1525985010674 .taskTextOutside1,
+#mermaid-1525985010674 .taskTextOutside3 {
   fill: black; }
 
 
-#mermaid-1525877718807 .active0,
-#mermaid-1525877718807 .active1,
-#mermaid-1525877718807 .active2,
-#mermaid-1525877718807 .active3 {
+#mermaid-1525985010674 .active0,
+#mermaid-1525985010674 .active1,
+#mermaid-1525985010674 .active2,
+#mermaid-1525985010674 .active3 {
   fill: #bfc7ff;
   stroke: #534fbc; }
 
-#mermaid-1525877718807 .activeText0,
-#mermaid-1525877718807 .activeText1,
-#mermaid-1525877718807 .activeText2,
-#mermaid-1525877718807 .activeText3 {
+#mermaid-1525985010674 .activeText0,
+#mermaid-1525985010674 .activeText1,
+#mermaid-1525985010674 .activeText2,
+#mermaid-1525985010674 .activeText3 {
   fill: black !important; }
 
 
-#mermaid-1525877718807 .done0,
-#mermaid-1525877718807 .done1,
-#mermaid-1525877718807 .done2,
-#mermaid-1525877718807 .done3 {
+#mermaid-1525985010674 .done0,
+#mermaid-1525985010674 .done1,
+#mermaid-1525985010674 .done2,
+#mermaid-1525985010674 .done3 {
   stroke: grey;
   fill: lightgrey;
   stroke-width: 2; }
 
-#mermaid-1525877718807 .doneText0,
-#mermaid-1525877718807 .doneText1,
-#mermaid-1525877718807 .doneText2,
-#mermaid-1525877718807 .doneText3 {
+#mermaid-1525985010674 .doneText0,
+#mermaid-1525985010674 .doneText1,
+#mermaid-1525985010674 .doneText2,
+#mermaid-1525985010674 .doneText3 {
   fill: black !important; }
 
 
-#mermaid-1525877718807 .crit0,
-#mermaid-1525877718807 .crit1,
-#mermaid-1525877718807 .crit2,
-#mermaid-1525877718807 .crit3 {
+#mermaid-1525985010674 .crit0,
+#mermaid-1525985010674 .crit1,
+#mermaid-1525985010674 .crit2,
+#mermaid-1525985010674 .crit3 {
   stroke: #ff8888;
   fill: red;
   stroke-width: 2; }
 
-#mermaid-1525877718807 .activeCrit0,
-#mermaid-1525877718807 .activeCrit1,
-#mermaid-1525877718807 .activeCrit2,
-#mermaid-1525877718807 .activeCrit3 {
+#mermaid-1525985010674 .activeCrit0,
+#mermaid-1525985010674 .activeCrit1,
+#mermaid-1525985010674 .activeCrit2,
+#mermaid-1525985010674 .activeCrit3 {
   stroke: #ff8888;
   fill: #bfc7ff;
   stroke-width: 2; }
 
-#mermaid-1525877718807 .doneCrit0,
-#mermaid-1525877718807 .doneCrit1,
-#mermaid-1525877718807 .doneCrit2,
-#mermaid-1525877718807 .doneCrit3 {
+#mermaid-1525985010674 .doneCrit0,
+#mermaid-1525985010674 .doneCrit1,
+#mermaid-1525985010674 .doneCrit2,
+#mermaid-1525985010674 .doneCrit3 {
   stroke: #ff8888;
   fill: lightgrey;
   stroke-width: 2;
   cursor: pointer;
   shape-rendering: crispEdges; }
 
-#mermaid-1525877718807 .doneCritText0,
-#mermaid-1525877718807 .doneCritText1,
-#mermaid-1525877718807 .doneCritText2,
-#mermaid-1525877718807 .doneCritText3 {
+#mermaid-1525985010674 .doneCritText0,
+#mermaid-1525985010674 .doneCritText1,
+#mermaid-1525985010674 .doneCritText2,
+#mermaid-1525985010674 .doneCritText3 {
   fill: black !important; }
 
-#mermaid-1525877718807 .activeCritText0,
-#mermaid-1525877718807 .activeCritText1,
-#mermaid-1525877718807 .activeCritText2,
-#mermaid-1525877718807 .activeCritText3 {
+#mermaid-1525985010674 .activeCritText0,
+#mermaid-1525985010674 .activeCritText1,
+#mermaid-1525985010674 .activeCritText2,
+#mermaid-1525985010674 .activeCritText3 {
   fill: black !important; }
 
-#mermaid-1525877718807 .titleText {
+#mermaid-1525985010674 .titleText {
   text-anchor: middle;
   font-size: 18px;
   fill: black; }
 
-#mermaid-1525877718807 g.classGroup text {
+#mermaid-1525985010674 g.classGroup text {
   fill: #9370DB;
   stroke: none;
   font-family: 'trebuchet ms', verdana, arial;
   font-size: 10px; }
 
-#mermaid-1525877718807 g.classGroup rect {
+#mermaid-1525985010674 g.classGroup rect {
   fill: #ECECFF;
   stroke: #9370DB; }
 
-#mermaid-1525877718807 g.classGroup line {
+#mermaid-1525985010674 g.classGroup line {
   stroke: #9370DB;
   stroke-width: 1; }
 
-#mermaid-1525877718807 .classLabel .box {
+#mermaid-1525985010674 .classLabel .box {
   stroke: none;
   stroke-width: 0;
   fill: #ECECFF;
   opacity: 0.5; }
 
-#mermaid-1525877718807 .classLabel .label {
+#mermaid-1525985010674 .classLabel .label {
   fill: #9370DB;
   font-size: 10px; }
 
-#mermaid-1525877718807 .relation {
+#mermaid-1525985010674 .relation {
   stroke: #9370DB;
   stroke-width: 1;
   fill: none; }
 
-#mermaid-1525877718807 #compositionStart {
+#mermaid-1525985010674 #compositionStart {
   fill: #9370DB;
   stroke: #9370DB;
   stroke-width: 1; }
 
-#mermaid-1525877718807 #compositionEnd {
+#mermaid-1525985010674 #compositionEnd {
   fill: #9370DB;
   stroke: #9370DB;
   stroke-width: 1; }
 
-#mermaid-1525877718807 #aggregationStart {
+#mermaid-1525985010674 #aggregationStart {
   fill: #ECECFF;
   stroke: #9370DB;
   stroke-width: 1; }
 
-#mermaid-1525877718807 #aggregationEnd {
+#mermaid-1525985010674 #aggregationEnd {
   fill: #ECECFF;
   stroke: #9370DB;
   stroke-width: 1; }
 
-#mermaid-1525877718807 #dependencyStart {
+#mermaid-1525985010674 #dependencyStart {
   fill: #9370DB;
   stroke: #9370DB;
   stroke-width: 1; }
 
-#mermaid-1525877718807 #dependencyEnd {
+#mermaid-1525985010674 #dependencyEnd {
   fill: #9370DB;
   stroke: #9370DB;
   stroke-width: 1; }
 
-#mermaid-1525877718807 #extensionStart {
+#mermaid-1525985010674 #extensionStart {
   fill: #9370DB;
   stroke: #9370DB;
   stroke-width: 1; }
 
-#mermaid-1525877718807 #extensionEnd {
+#mermaid-1525985010674 #extensionEnd {
   fill: #9370DB;
   stroke: #9370DB;
   stroke-width: 1; }
 
-#mermaid-1525877718807 .commit-id,
-#mermaid-1525877718807 .commit-msg,
-#mermaid-1525877718807 .branch-label {
+#mermaid-1525985010674 .commit-id,
+#mermaid-1525985010674 .commit-msg,
+#mermaid-1525985010674 .branch-label {
   fill: lightgrey;
   color: lightgrey; }
-</style><style>#mermaid-1525877718807 {
+</style><style>#mermaid-1525985010674 {
     color: rgb(0, 0, 0);
     font: normal normal 400 normal 16px / normal "Times New Roman";
-  }</style><g></g><g><line id="actor0" x1="75" y1="5" x2="75" y2="627" class="actor-line" stroke-width="0.5px" stroke="#999"></line><rect x="0" y="0" fill="#eaeaea" stroke="#666" width="150" height="65" rx="3" ry="3" class="actor"></rect><text x="75" y="32.5" dominant-baseline="central" alignment-baseline="central" class="actor" style="text-anchor: middle;"><tspan x="75" dy="0">Browser</tspan></text></g><g><line id="actor1" x1="275" y1="5" x2="275" y2="627" class="actor-line" stroke-width="0.5px" stroke="#999"></line><rect x="200" y="0" fill="#eaeaea" stroke="#666" width="150" height="65" rx="3" ry="3" class="actor"></rect><text x="275" y="32.5" dominant-baseline="central" alignment-baseline="central" class="actor" style="text-anchor: middle;"><tspan x="275" dy="0">Cloudflare</tspan></text></g><g><line id="actor2" x1="475" y1="5" x2="475" y2="627" class="actor-line" stroke-width="0.5px" stroke="#999"></line><rect x="400" y="0" fill="#eaeaea" stroke="#666" width="150" height="65" rx="3" ry="3" class="actor"></rect><text x="475" y="32.5" dominant-baseline="central" alignment-baseline="central" class="actor" style="text-anchor: middle;"><tspan x="475" dy="0">Cloudfront</tspan></text></g><g><line id="actor3" x1="675" y1="5" x2="675" y2="627" class="actor-line" stroke-width="0.5px" stroke="#999"></line><rect x="600" y="0" fill="#eaeaea" stroke="#666" width="150" height="65" rx="3" ry="3" class="actor"></rect><text x="675" y="32.5" dominant-baseline="central" alignment-baseline="central" class="actor" style="text-anchor: middle;"><tspan x="675" dy="0">API Gateway</tspan></text></g><g><line id="actor4" x1="875" y1="5" x2="875" y2="627" class="actor-line" stroke-width="0.5px" stroke="#999"></line><rect x="800" y="0" fill="#eaeaea" stroke="#666" width="150" height="65" rx="3" ry="3" class="actor"></rect><text x="875" y="32.5" dominant-baseline="central" alignment-baseline="central" class="actor" style="text-anchor: middle;"><tspan x="875" dy="0">Lambda</tspan></text></g><defs><marker id="arrowhead" refX="5" refY="2" markerWidth="6" markerHeight="4" orient="auto"><path d="M 0,0 V 4 L6,2 Z"></path></marker></defs><defs><marker id="crosshead" markerWidth="15" markerHeight="8" orient="auto" refX="16" refY="4"><path fill="black" stroke="#000000" stroke-width="1px" d="M 9,2 V 6 L16,4 Z" style="stroke-dasharray: 0, 0;"></path><path fill="none" stroke="#000000" stroke-width="1px" d="M 0,1 L 6,7 M 6,1 L 0,7" style="stroke-dasharray: 0, 0;"></path></marker></defs><g><text x="175" y="93" class="messageText" style="text-anchor: middle;">Give me IP of test-cde123.wolke.run</text><line x1="75" y1="100" x2="275" y2="100" class="messageLine0" stroke-width="2" stroke="black" marker-end="url(#arrowhead)" style="fill: none;"></line></g><g><text x="175" y="128" class="messageText" style="text-anchor: middle;">Just use 10.1.55.234</text><line x1="275" y1="135" x2="75" y2="135" class="messageLine0" stroke-width="2" stroke="black" marker-end="url(#arrowhead)" style="fill: none;"></line></g><g><text x="175" y="163" class="messageText" style="text-anchor: middle;">This is you, give me content</text><line x1="75" y1="170" x2="275" y2="170" class="messageLine0" stroke-width="2" stroke="black" marker-end="url(#arrowhead)" style="fill: none;"></line></g><g><rect x="50" y="180" fill="#EDF2AE" stroke="#666" width="250" height="52" rx="0" ry="0" class="note"></rect><text x="46" y="204" fill="black" class="noteText"><tspan x="66" fill="black">If cached in CDN, content is</tspan></text><text x="46" y="220" fill="black" class="noteText"><tspan x="66" fill="black">directly returned to Browser</tspan></text></g><g><text x="375" y="260" class="messageText" style="text-anchor: middle;">Give me content of test-cde123.wolke.run</text><line x1="275" y1="267" x2="475" y2="267" class="messageLine0" stroke-width="2" stroke="black" marker-end="url(#arrowhead)" style="fill: none;"></line></g><g><text x="575" y="295" class="messageText" style="text-anchor: middle;">Give me content of test-cde123.wolke.run</text><line x1="475" y1="302" x2="675" y2="302" class="messageLine0" stroke-width="2" stroke="black" marker-end="url(#arrowhead)" style="fill: none;"></line></g><g><text x="675" y="330" class="messageText" style="text-anchor: middle;">test-cde123.wolke.run is Lamda test/version 23</text><path d="M 675,337 C 735,327 735,367 675,357" class="messageLine0" stroke-width="2" stroke="black" marker-end="url(#arrowhead)" style="fill: none;"></path></g><g><text x="775" y="395" class="messageText" style="text-anchor: middle;">Execute lambda test version 23</text><line x1="675" y1="402" x2="875" y2="402" class="messageLine0" stroke-width="2" stroke="black" marker-end="url(#arrowhead)" style="fill: none;"></line></g><g><text x="775" y="430" class="messageText" style="text-anchor: middle;">Content of lambda call</text><line x1="875" y1="437" x2="675" y2="437" class="messageLine0" stroke-width="2" stroke="black" marker-end="url(#arrowhead)" style="fill: none;"></line></g><g><text x="575" y="465" class="messageText" style="text-anchor: middle;">Content of lambda call</text><line x1="675" y1="472" x2="475" y2="472" class="messageLine0" stroke-width="2" stroke="black" marker-end="url(#arrowhead)" style="fill: none;"></line></g><g><text x="375" y="500" class="messageText" style="text-anchor: middle;">Content of lambda call</text><line x1="475" y1="507" x2="275" y2="507" class="messageLine0" stroke-width="2" stroke="black" marker-end="url(#arrowhead)" style="fill: none;"></line></g><g><text x="175" y="535" class="messageText" style="text-anchor: middle;">Content of lambda call</text><line x1="275" y1="542" x2="75" y2="542" class="messageLine0" stroke-width="2" stroke="black" marker-end="url(#arrowhead)" style="fill: none;"></line></g><g><rect x="0" y="562" fill="#eaeaea" stroke="#666" width="150" height="65" rx="3" ry="3" class="actor"></rect><text x="75" y="594.5" dominant-baseline="central" alignment-baseline="central" class="actor" style="text-anchor: middle;"><tspan x="75" dy="0">Browser</tspan></text></g><g><rect x="200" y="562" fill="#eaeaea" stroke="#666" width="150" height="65" rx="3" ry="3" class="actor"></rect><text x="275" y="594.5" dominant-baseline="central" alignment-baseline="central" class="actor" style="text-anchor: middle;"><tspan x="275" dy="0">Cloudflare</tspan></text></g><g><rect x="400" y="562" fill="#eaeaea" stroke="#666" width="150" height="65" rx="3" ry="3" class="actor"></rect><text x="475" y="594.5" dominant-baseline="central" alignment-baseline="central" class="actor" style="text-anchor: middle;"><tspan x="475" dy="0">Cloudfront</tspan></text></g><g><rect x="600" y="562" fill="#eaeaea" stroke="#666" width="150" height="65" rx="3" ry="3" class="actor"></rect><text x="675" y="594.5" dominant-baseline="central" alignment-baseline="central" class="actor" style="text-anchor: middle;"><tspan x="675" dy="0">API Gateway</tspan></text></g><g><rect x="800" y="562" fill="#eaeaea" stroke="#666" width="150" height="65" rx="3" ry="3" class="actor"></rect><text x="875" y="594.5" dominant-baseline="central" alignment-baseline="central" class="actor" style="text-anchor: middle;"><tspan x="875" dy="0">Lambda</tspan></text></g></svg>
+  }</style><style>#mermaid-1525985010674 .actor {
+  stroke: #612943;
+  fill: #fef7f0;
+}</style><g></g><g><line id="actor0" x1="75" y1="5" x2="75" y2="627" class="actor-line" stroke-width="0.5px" stroke="#999"></line><rect x="0" y="0" fill="#eaeaea" stroke="#666" width="150" height="65" rx="3" ry="3" class="actor"></rect><text x="75" y="32.5" dominant-baseline="central" alignment-baseline="central" class="actor" style="text-anchor: middle;"><tspan x="75" dy="0">Browser</tspan></text></g><g><line id="actor1" x1="275" y1="5" x2="275" y2="627" class="actor-line" stroke-width="0.5px" stroke="#999"></line><rect x="200" y="0" fill="#eaeaea" stroke="#666" width="150" height="65" rx="3" ry="3" class="actor"></rect><text x="275" y="32.5" dominant-baseline="central" alignment-baseline="central" class="actor" style="text-anchor: middle;"><tspan x="275" dy="0">Cloudflare</tspan></text></g><g><line id="actor2" x1="475" y1="5" x2="475" y2="627" class="actor-line" stroke-width="0.5px" stroke="#999"></line><rect x="400" y="0" fill="#eaeaea" stroke="#666" width="150" height="65" rx="3" ry="3" class="actor"></rect><text x="475" y="32.5" dominant-baseline="central" alignment-baseline="central" class="actor" style="text-anchor: middle;"><tspan x="475" dy="0">Cloudfront</tspan></text></g><g><line id="actor3" x1="675" y1="5" x2="675" y2="627" class="actor-line" stroke-width="0.5px" stroke="#999"></line><rect x="600" y="0" fill="#eaeaea" stroke="#666" width="150" height="65" rx="3" ry="3" class="actor"></rect><text x="675" y="32.5" dominant-baseline="central" alignment-baseline="central" class="actor" style="text-anchor: middle;"><tspan x="675" dy="0">API Gateway</tspan></text></g><g><line id="actor4" x1="875" y1="5" x2="875" y2="627" class="actor-line" stroke-width="0.5px" stroke="#999"></line><rect x="800" y="0" fill="#eaeaea" stroke="#666" width="150" height="65" rx="3" ry="3" class="actor"></rect><text x="875" y="32.5" dominant-baseline="central" alignment-baseline="central" class="actor" style="text-anchor: middle;"><tspan x="875" dy="0">Lambda</tspan></text></g><defs><marker id="arrowhead" refX="5" refY="2" markerWidth="6" markerHeight="4" orient="auto"><path d="M 0,0 V 4 L6,2 Z"></path></marker></defs><defs><marker id="crosshead" markerWidth="15" markerHeight="8" orient="auto" refX="16" refY="4"><path fill="black" stroke="#000000" stroke-width="1px" d="M 9,2 V 6 L16,4 Z" style="stroke-dasharray: 0, 0;"></path><path fill="none" stroke="#000000" stroke-width="1px" d="M 0,1 L 6,7 M 6,1 L 0,7" style="stroke-dasharray: 0, 0;"></path></marker></defs><g><text x="175" y="93" class="messageText" style="text-anchor: middle;">Give me IP of test-cde123.wolke.run</text><line x1="75" y1="100" x2="275" y2="100" class="messageLine0" stroke-width="2" stroke="black" marker-end="url(#arrowhead)" style="fill: none;"></line></g><g><text x="175" y="128" class="messageText" style="text-anchor: middle;">Just use 10.1.55.234</text><line x1="275" y1="135" x2="75" y2="135" class="messageLine0" stroke-width="2" stroke="black" marker-end="url(#arrowhead)" style="fill: none;"></line></g><g><text x="175" y="163" class="messageText" style="text-anchor: middle;">This is you, give me content</text><line x1="75" y1="170" x2="275" y2="170" class="messageLine0" stroke-width="2" stroke="black" marker-end="url(#arrowhead)" style="fill: none;"></line></g><g><rect x="50" y="180" fill="#EDF2AE" stroke="#666" width="250" height="52" rx="0" ry="0" class="note"></rect><text x="46" y="204" fill="black" class="noteText"><tspan x="66" fill="black">If cached in CDN, content is</tspan></text><text x="46" y="220" fill="black" class="noteText"><tspan x="66" fill="black">directly returned to Browser</tspan></text></g><g><text x="375" y="260" class="messageText" style="text-anchor: middle;">Give me content of test-cde123.wolke.run</text><line x1="275" y1="267" x2="475" y2="267" class="messageLine0" stroke-width="2" stroke="black" marker-end="url(#arrowhead)" style="fill: none;"></line></g><g><text x="575" y="295" class="messageText" style="text-anchor: middle;">Give me content of test-cde123.wolke.run</text><line x1="475" y1="302" x2="675" y2="302" class="messageLine0" stroke-width="2" stroke="black" marker-end="url(#arrowhead)" style="fill: none;"></line></g><g><text x="675" y="330" class="messageText" style="text-anchor: middle;">test-cde123.wolke.run is Lamda test/version 23</text><path d="M 675,337 C 735,327 735,367 675,357" class="messageLine0" stroke-width="2" stroke="black" marker-end="url(#arrowhead)" style="fill: none;"></path></g><g><text x="775" y="395" class="messageText" style="text-anchor: middle;">Execute lambda test version 23</text><line x1="675" y1="402" x2="875" y2="402" class="messageLine0" stroke-width="2" stroke="black" marker-end="url(#arrowhead)" style="fill: none;"></line></g><g><text x="775" y="430" class="messageText" style="text-anchor: middle;">Content of lambda call</text><line x1="875" y1="437" x2="675" y2="437" class="messageLine0" stroke-width="2" stroke="black" marker-end="url(#arrowhead)" style="fill: none;"></line></g><g><text x="575" y="465" class="messageText" style="text-anchor: middle;">Content of lambda call</text><line x1="675" y1="472" x2="475" y2="472" class="messageLine0" stroke-width="2" stroke="black" marker-end="url(#arrowhead)" style="fill: none;"></line></g><g><text x="375" y="500" class="messageText" style="text-anchor: middle;">Content of lambda call</text><line x1="475" y1="507" x2="275" y2="507" class="messageLine0" stroke-width="2" stroke="black" marker-end="url(#arrowhead)" style="fill: none;"></line></g><g><text x="175" y="535" class="messageText" style="text-anchor: middle;">Content of lambda call</text><line x1="275" y1="542" x2="75" y2="542" class="messageLine0" stroke-width="2" stroke="black" marker-end="url(#arrowhead)" style="fill: none;"></line></g><g><rect x="0" y="562" fill="#eaeaea" stroke="#666" width="150" height="65" rx="3" ry="3" class="actor"></rect><text x="75" y="594.5" dominant-baseline="central" alignment-baseline="central" class="actor" style="text-anchor: middle;"><tspan x="75" dy="0">Browser</tspan></text></g><g><rect x="200" y="562" fill="#eaeaea" stroke="#666" width="150" height="65" rx="3" ry="3" class="actor"></rect><text x="275" y="594.5" dominant-baseline="central" alignment-baseline="central" class="actor" style="text-anchor: middle;"><tspan x="275" dy="0">Cloudflare</tspan></text></g><g><rect x="400" y="562" fill="#eaeaea" stroke="#666" width="150" height="65" rx="3" ry="3" class="actor"></rect><text x="475" y="594.5" dominant-baseline="central" alignment-baseline="central" class="actor" style="text-anchor: middle;"><tspan x="475" dy="0">Cloudfront</tspan></text></g><g><rect x="600" y="562" fill="#eaeaea" stroke="#666" width="150" height="65" rx="3" ry="3" class="actor"></rect><text x="675" y="594.5" dominant-baseline="central" alignment-baseline="central" class="actor" style="text-anchor: middle;"><tspan x="675" dy="0">API Gateway</tspan></text></g><g><rect x="800" y="562" fill="#eaeaea" stroke="#666" width="150" height="65" rx="3" ry="3" class="actor"></rect><text x="875" y="594.5" dominant-baseline="central" alignment-baseline="central" class="actor" style="text-anchor: middle;"><tspan x="875" dy="0">Lambda</tspan></text></g></svg>
