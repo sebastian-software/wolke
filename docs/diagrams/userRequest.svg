@@ -1,40 +1,40 @@
-<svg id="mmd-3d914f32" width="100%" xmlns="http://www.w3.org/2000/svg" height="100%" style="max-width:1050px;" viewBox="-50 -10 1050 622"><style>
+<svg id="mmd-c120f1f8" width="100%" xmlns="http://www.w3.org/2000/svg" height="100%" style="max-width:1050px;" viewBox="-50 -10 1050 622"><style>
 
 
-#mmd-3d914f32 .label {
+#mmd-c120f1f8 .label {
   font-family: 'trebuchet ms', verdana, arial;
   color: #333; }
 
-#mmd-3d914f32 .node rect,
-#mmd-3d914f32 .node circle,
-#mmd-3d914f32 .node ellipse,
-#mmd-3d914f32 .node polygon {
+#mmd-c120f1f8 .node rect,
+#mmd-c120f1f8 .node circle,
+#mmd-c120f1f8 .node ellipse,
+#mmd-c120f1f8 .node polygon {
   fill: #ECECFF;
   stroke: #9370DB;
   stroke-width: 1px; }
 
-#mmd-3d914f32 .node.clickable {
+#mmd-c120f1f8 .node.clickable {
   cursor: pointer; }
 
-#mmd-3d914f32 .arrowheadPath {
+#mmd-c120f1f8 .arrowheadPath {
   fill: #333333; }
 
-#mmd-3d914f32 .edgePath .path {
+#mmd-c120f1f8 .edgePath .path {
   stroke: #333333;
   stroke-width: 1.5px; }
 
-#mmd-3d914f32 .edgeLabel {
+#mmd-c120f1f8 .edgeLabel {
   background-color: #e8e8e8; }
 
-#mmd-3d914f32 .cluster rect {
+#mmd-c120f1f8 .cluster rect {
   fill: #ffffde !important;
   stroke: #aaaa33 !important;
   stroke-width: 1px !important; }
 
-#mmd-3d914f32 .cluster text {
+#mmd-c120f1f8 .cluster text {
   fill: #333; }
 
-#mmd-3d914f32 div.mermaidTooltip {
+#mmd-c120f1f8 div.mermaidTooltip {
   position: absolute;
   text-align: center;
   max-width: 200px;
@@ -47,307 +47,308 @@
   pointer-events: none;
   z-index: 100; }
 
-#mmd-3d914f32 .actor {
+#mmd-c120f1f8 .actor {
   stroke: #CCCCFF;
   fill: #ECECFF; }
 
-#mmd-3d914f32 text.actor {
+#mmd-c120f1f8 text.actor {
   fill: black;
   stroke: none; }
 
-#mmd-3d914f32 .actor-line {
+#mmd-c120f1f8 .actor-line {
   stroke: grey; }
 
-#mmd-3d914f32 .messageLine0 {
+#mmd-c120f1f8 .messageLine0 {
   stroke-width: 1.5;
   stroke-dasharray: '2 2';
   marker-end: 'url(#arrowhead)';
   stroke: #333; }
 
-#mmd-3d914f32 .messageLine1 {
+#mmd-c120f1f8 .messageLine1 {
   stroke-width: 1.5;
   stroke-dasharray: '2 2';
   stroke: #333; }
 
-#mmd-3d914f32 #arrowhead {
+#mmd-c120f1f8 #arrowhead {
   fill: #333; }
 
-#mmd-3d914f32 #crosshead path {
+#mmd-c120f1f8 #crosshead path {
   fill: #333 !important;
   stroke: #333 !important; }
 
-#mmd-3d914f32 .messageText {
+#mmd-c120f1f8 .messageText {
   fill: #333;
   stroke: none; }
 
-#mmd-3d914f32 .labelBox {
+#mmd-c120f1f8 .labelBox {
   stroke: #CCCCFF;
   fill: #ECECFF; }
 
-#mmd-3d914f32 .labelText {
+#mmd-c120f1f8 .labelText {
   fill: black;
   stroke: none; }
 
-#mmd-3d914f32 .loopText {
+#mmd-c120f1f8 .loopText {
   fill: black;
   stroke: none; }
 
-#mmd-3d914f32 .loopLine {
+#mmd-c120f1f8 .loopLine {
   stroke-width: 2;
   stroke-dasharray: '2 2';
   marker-end: 'url(#arrowhead)';
   stroke: #CCCCFF; }
 
-#mmd-3d914f32 .note {
+#mmd-c120f1f8 .note {
   stroke: #aaaa33;
   fill: #fff5ad; }
 
-#mmd-3d914f32 .noteText {
+#mmd-c120f1f8 .noteText {
   fill: black;
   stroke: none;
   font-family: 'trebuchet ms', verdana, arial;
   font-size: 14px; }
 
 
-#mmd-3d914f32 .section {
+#mmd-c120f1f8 .section {
   stroke: none;
   opacity: 0.2; }
 
-#mmd-3d914f32 .section0 {
+#mmd-c120f1f8 .section0 {
   fill: rgba(102, 102, 255, 0.49); }
 
-#mmd-3d914f32 .section2 {
+#mmd-c120f1f8 .section2 {
   fill: #fff400; }
 
-#mmd-3d914f32 .section1,
-#mmd-3d914f32 .section3 {
+#mmd-c120f1f8 .section1,
+#mmd-c120f1f8 .section3 {
   fill: white;
   opacity: 0.2; }
 
-#mmd-3d914f32 .sectionTitle0 {
+#mmd-c120f1f8 .sectionTitle0 {
   fill: #333; }
 
-#mmd-3d914f32 .sectionTitle1 {
+#mmd-c120f1f8 .sectionTitle1 {
   fill: #333; }
 
-#mmd-3d914f32 .sectionTitle2 {
+#mmd-c120f1f8 .sectionTitle2 {
   fill: #333; }
 
-#mmd-3d914f32 .sectionTitle3 {
+#mmd-c120f1f8 .sectionTitle3 {
   fill: #333; }
 
-#mmd-3d914f32 .sectionTitle {
+#mmd-c120f1f8 .sectionTitle {
   text-anchor: start;
   font-size: 11px;
   text-height: 14px; }
 
 
-#mmd-3d914f32 .grid .tick {
+#mmd-c120f1f8 .grid .tick {
   stroke: lightgrey;
   opacity: 0.3;
   shape-rendering: crispEdges; }
 
-#mmd-3d914f32 .grid path {
+#mmd-c120f1f8 .grid path {
   stroke-width: 0; }
 
 
-#mmd-3d914f32 .today {
+#mmd-c120f1f8 .today {
   fill: none;
   stroke: red;
   stroke-width: 2px; }
 
 
 
-#mmd-3d914f32 .task {
+#mmd-c120f1f8 .task {
   stroke-width: 2; }
 
-#mmd-3d914f32 .taskText {
+#mmd-c120f1f8 .taskText {
   text-anchor: middle;
   font-size: 11px; }
 
-#mmd-3d914f32 .taskTextOutsideRight {
+#mmd-c120f1f8 .taskTextOutsideRight {
   fill: black;
   text-anchor: start;
   font-size: 11px; }
 
-#mmd-3d914f32 .taskTextOutsideLeft {
+#mmd-c120f1f8 .taskTextOutsideLeft {
   fill: black;
   text-anchor: end;
   font-size: 11px; }
 
 
-#mmd-3d914f32 .taskText0,
-#mmd-3d914f32 .taskText1,
-#mmd-3d914f32 .taskText2,
-#mmd-3d914f32 .taskText3 {
+#mmd-c120f1f8 .taskText0,
+#mmd-c120f1f8 .taskText1,
+#mmd-c120f1f8 .taskText2,
+#mmd-c120f1f8 .taskText3 {
   fill: white; }
 
-#mmd-3d914f32 .task0,
-#mmd-3d914f32 .task1,
-#mmd-3d914f32 .task2,
-#mmd-3d914f32 .task3 {
+#mmd-c120f1f8 .task0,
+#mmd-c120f1f8 .task1,
+#mmd-c120f1f8 .task2,
+#mmd-c120f1f8 .task3 {
   fill: #8a90dd;
   stroke: #534fbc; }
 
-#mmd-3d914f32 .taskTextOutside0,
-#mmd-3d914f32 .taskTextOutside2 {
+#mmd-c120f1f8 .taskTextOutside0,
+#mmd-c120f1f8 .taskTextOutside2 {
   fill: black; }
 
-#mmd-3d914f32 .taskTextOutside1,
-#mmd-3d914f32 .taskTextOutside3 {
+#mmd-c120f1f8 .taskTextOutside1,
+#mmd-c120f1f8 .taskTextOutside3 {
   fill: black; }
 
 
-#mmd-3d914f32 .active0,
-#mmd-3d914f32 .active1,
-#mmd-3d914f32 .active2,
-#mmd-3d914f32 .active3 {
+#mmd-c120f1f8 .active0,
+#mmd-c120f1f8 .active1,
+#mmd-c120f1f8 .active2,
+#mmd-c120f1f8 .active3 {
   fill: #bfc7ff;
   stroke: #534fbc; }
 
-#mmd-3d914f32 .activeText0,
-#mmd-3d914f32 .activeText1,
-#mmd-3d914f32 .activeText2,
-#mmd-3d914f32 .activeText3 {
+#mmd-c120f1f8 .activeText0,
+#mmd-c120f1f8 .activeText1,
+#mmd-c120f1f8 .activeText2,
+#mmd-c120f1f8 .activeText3 {
   fill: black !important; }
 
 
-#mmd-3d914f32 .done0,
-#mmd-3d914f32 .done1,
-#mmd-3d914f32 .done2,
-#mmd-3d914f32 .done3 {
+#mmd-c120f1f8 .done0,
+#mmd-c120f1f8 .done1,
+#mmd-c120f1f8 .done2,
+#mmd-c120f1f8 .done3 {
   stroke: grey;
   fill: lightgrey;
   stroke-width: 2; }
 
-#mmd-3d914f32 .doneText0,
-#mmd-3d914f32 .doneText1,
-#mmd-3d914f32 .doneText2,
-#mmd-3d914f32 .doneText3 {
+#mmd-c120f1f8 .doneText0,
+#mmd-c120f1f8 .doneText1,
+#mmd-c120f1f8 .doneText2,
+#mmd-c120f1f8 .doneText3 {
   fill: black !important; }
 
 
-#mmd-3d914f32 .crit0,
-#mmd-3d914f32 .crit1,
-#mmd-3d914f32 .crit2,
-#mmd-3d914f32 .crit3 {
+#mmd-c120f1f8 .crit0,
+#mmd-c120f1f8 .crit1,
+#mmd-c120f1f8 .crit2,
+#mmd-c120f1f8 .crit3 {
   stroke: #ff8888;
   fill: red;
   stroke-width: 2; }
 
-#mmd-3d914f32 .activeCrit0,
-#mmd-3d914f32 .activeCrit1,
-#mmd-3d914f32 .activeCrit2,
-#mmd-3d914f32 .activeCrit3 {
+#mmd-c120f1f8 .activeCrit0,
+#mmd-c120f1f8 .activeCrit1,
+#mmd-c120f1f8 .activeCrit2,
+#mmd-c120f1f8 .activeCrit3 {
   stroke: #ff8888;
   fill: #bfc7ff;
   stroke-width: 2; }
 
-#mmd-3d914f32 .doneCrit0,
-#mmd-3d914f32 .doneCrit1,
-#mmd-3d914f32 .doneCrit2,
-#mmd-3d914f32 .doneCrit3 {
+#mmd-c120f1f8 .doneCrit0,
+#mmd-c120f1f8 .doneCrit1,
+#mmd-c120f1f8 .doneCrit2,
+#mmd-c120f1f8 .doneCrit3 {
   stroke: #ff8888;
   fill: lightgrey;
   stroke-width: 2;
   cursor: pointer;
   shape-rendering: crispEdges; }
 
-#mmd-3d914f32 .doneCritText0,
-#mmd-3d914f32 .doneCritText1,
-#mmd-3d914f32 .doneCritText2,
-#mmd-3d914f32 .doneCritText3 {
+#mmd-c120f1f8 .doneCritText0,
+#mmd-c120f1f8 .doneCritText1,
+#mmd-c120f1f8 .doneCritText2,
+#mmd-c120f1f8 .doneCritText3 {
   fill: black !important; }
 
-#mmd-3d914f32 .activeCritText0,
-#mmd-3d914f32 .activeCritText1,
-#mmd-3d914f32 .activeCritText2,
-#mmd-3d914f32 .activeCritText3 {
+#mmd-c120f1f8 .activeCritText0,
+#mmd-c120f1f8 .activeCritText1,
+#mmd-c120f1f8 .activeCritText2,
+#mmd-c120f1f8 .activeCritText3 {
   fill: black !important; }
 
-#mmd-3d914f32 .titleText {
+#mmd-c120f1f8 .titleText {
   text-anchor: middle;
   font-size: 18px;
   fill: black; }
 
-#mmd-3d914f32 g.classGroup text {
+#mmd-c120f1f8 g.classGroup text {
   fill: #9370DB;
   stroke: none;
   font-family: 'trebuchet ms', verdana, arial;
   font-size: 10px; }
 
-#mmd-3d914f32 g.classGroup rect {
+#mmd-c120f1f8 g.classGroup rect {
   fill: #ECECFF;
   stroke: #9370DB; }
 
-#mmd-3d914f32 g.classGroup line {
+#mmd-c120f1f8 g.classGroup line {
   stroke: #9370DB;
   stroke-width: 1; }
 
-#mmd-3d914f32 .classLabel .box {
+#mmd-c120f1f8 .classLabel .box {
   stroke: none;
   stroke-width: 0;
   fill: #ECECFF;
   opacity: 0.5; }
 
-#mmd-3d914f32 .classLabel .label {
+#mmd-c120f1f8 .classLabel .label {
   fill: #9370DB;
   font-size: 10px; }
 
-#mmd-3d914f32 .relation {
+#mmd-c120f1f8 .relation {
   stroke: #9370DB;
   stroke-width: 1;
   fill: none; }
 
-#mmd-3d914f32 #compositionStart {
+#mmd-c120f1f8 #compositionStart {
   fill: #9370DB;
   stroke: #9370DB;
   stroke-width: 1; }
 
-#mmd-3d914f32 #compositionEnd {
+#mmd-c120f1f8 #compositionEnd {
   fill: #9370DB;
   stroke: #9370DB;
   stroke-width: 1; }
 
-#mmd-3d914f32 #aggregationStart {
+#mmd-c120f1f8 #aggregationStart {
   fill: #ECECFF;
   stroke: #9370DB;
   stroke-width: 1; }
 
-#mmd-3d914f32 #aggregationEnd {
+#mmd-c120f1f8 #aggregationEnd {
   fill: #ECECFF;
   stroke: #9370DB;
   stroke-width: 1; }
 
-#mmd-3d914f32 #dependencyStart {
+#mmd-c120f1f8 #dependencyStart {
   fill: #9370DB;
   stroke: #9370DB;
   stroke-width: 1; }
 
-#mmd-3d914f32 #dependencyEnd {
+#mmd-c120f1f8 #dependencyEnd {
   fill: #9370DB;
   stroke: #9370DB;
   stroke-width: 1; }
 
-#mmd-3d914f32 #extensionStart {
+#mmd-c120f1f8 #extensionStart {
   fill: #9370DB;
   stroke: #9370DB;
   stroke-width: 1; }
 
-#mmd-3d914f32 #extensionEnd {
+#mmd-c120f1f8 #extensionEnd {
   fill: #9370DB;
   stroke: #9370DB;
   stroke-width: 1; }
 
-#mmd-3d914f32 .commit-id,
-#mmd-3d914f32 .commit-msg,
-#mmd-3d914f32 .branch-label {
+#mmd-c120f1f8 .commit-id,
+#mmd-c120f1f8 .commit-msg,
+#mmd-c120f1f8 .branch-label {
   fill: lightgrey;
   color: lightgrey; }
-</style><style>#mmd-3d914f32 {
+</style><style>#mmd-c120f1f8 {
     color: rgb(0, 0, 0);
     font: normal normal 400 normal 16px / normal "Times New Roman";
-  }</style><style>#mmd-3d914f32 .actor {
+  }</style><style>#mmd-c120f1f8 .actor {
   stroke: #612943;
   fill: #fef7f0;
-}</style><g></g><g><line id="actor0" x1="75" y1="5" x2="75" y2="611" class="actor-line" stroke-width="0.5px" stroke="#999"></line><rect x="0" y="0" fill="#eaeaea" stroke="#666" width="150" height="65" rx="3" ry="3" class="actor"></rect><text x="75" y="32.5" dominant-baseline="central" alignment-baseline="central" class="actor" style="text-anchor: middle;"><tspan x="75" dy="0">Browser</tspan></text></g><g><line id="actor1" x1="275" y1="5" x2="275" y2="611" class="actor-line" stroke-width="0.5px" stroke="#999"></line><rect x="200" y="0" fill="#eaeaea" stroke="#666" width="150" height="65" rx="3" ry="3" class="actor"></rect><text x="275" y="32.5" dominant-baseline="central" alignment-baseline="central" class="actor" style="text-anchor: middle;"><tspan x="275" dy="0">Cloudflare</tspan></text></g><g><line id="actor2" x1="475" y1="5" x2="475" y2="611" class="actor-line" stroke-width="0.5px" stroke="#999"></line><rect x="400" y="0" fill="#eaeaea" stroke="#666" width="150" height="65" rx="3" ry="3" class="actor"></rect><text x="475" y="32.5" dominant-baseline="central" alignment-baseline="central" class="actor" style="text-anchor: middle;"><tspan x="475" dy="0">Cloudfront</tspan></text></g><g><line id="actor3" x1="675" y1="5" x2="675" y2="611" class="actor-line" stroke-width="0.5px" stroke="#999"></line><rect x="600" y="0" fill="#eaeaea" stroke="#666" width="150" height="65" rx="3" ry="3" class="actor"></rect><text x="675" y="32.5" dominant-baseline="central" alignment-baseline="central" class="actor" style="text-anchor: middle;"><tspan x="675" dy="0">API Gateway</tspan></text></g><g><line id="actor4" x1="875" y1="5" x2="875" y2="611" class="actor-line" stroke-width="0.5px" stroke="#999"></line><rect x="800" y="0" fill="#eaeaea" stroke="#666" width="150" height="65" rx="3" ry="3" class="actor"></rect><text x="875" y="32.5" dominant-baseline="central" alignment-baseline="central" class="actor" style="text-anchor: middle;"><tspan x="875" dy="0">Lambda</tspan></text></g><defs><marker id="arrowhead" refX="5" refY="2" markerWidth="6" markerHeight="4" orient="auto"><path d="M 0,0 V 4 L6,2 Z"></path></marker></defs><defs><marker id="crosshead" markerWidth="15" markerHeight="8" orient="auto" refX="16" refY="4"><path fill="black" stroke="#000000" stroke-width="1px" d="M 9,2 V 6 L16,4 Z" style="stroke-dasharray: 0, 0;"></path><path fill="none" stroke="#000000" stroke-width="1px" d="M 0,1 L 6,7 M 6,1 L 0,7" style="stroke-dasharray: 0, 0;"></path></marker></defs><g><text x="175" y="93" class="messageText" style="text-anchor: middle;">Give me IP of test-cde123.wolke.run</text><line x1="75" y1="100" x2="275" y2="100" class="messageLine0" stroke-width="2" stroke="black" marker-end="url(#arrowhead)" style="fill: none;"></line></g><g><text x="175" y="128" class="messageText" style="text-anchor: middle;">Just use 10.1.55.234</text><line x1="275" y1="135" x2="75" y2="135" class="messageLine0" stroke-width="2" stroke="black" marker-end="url(#arrowhead)" style="fill: none;"></line></g><g><text x="175" y="163" class="messageText" style="text-anchor: middle;">This is you, give me content</text><line x1="75" y1="170" x2="275" y2="170" class="messageLine0" stroke-width="2" stroke="black" marker-end="url(#arrowhead)" style="fill: none;"></line></g><g><rect x="50" y="180" fill="#EDF2AE" stroke="#666" width="250" height="36" rx="0" ry="0" class="note"></rect><text x="46" y="204" fill="black" class="noteText"><tspan x="66" fill="black">If cached in CDN, content is&lt;br /&gt;directly returned to Browser</tspan></text></g><g><text x="375" y="244" class="messageText" style="text-anchor: middle;">Give me content of test-cde123.wolke.run</text><line x1="275" y1="251" x2="475" y2="251" class="messageLine0" stroke-width="2" stroke="black" marker-end="url(#arrowhead)" style="fill: none;"></line></g><g><text x="575" y="279" class="messageText" style="text-anchor: middle;">Give me content of test-cde123.wolke.run</text><line x1="475" y1="286" x2="675" y2="286" class="messageLine0" stroke-width="2" stroke="black" marker-end="url(#arrowhead)" style="fill: none;"></line></g><g><text x="675" y="314" class="messageText" style="text-anchor: middle;">test-cde123.wolke.run is Lamda test/version 23</text><path d="M 675,321 C 735,311 735,351 675,341" class="messageLine0" stroke-width="2" stroke="black" marker-end="url(#arrowhead)" style="fill: none;"></path></g><g><text x="775" y="379" class="messageText" style="text-anchor: middle;">Execute lambda test version 23</text><line x1="675" y1="386" x2="875" y2="386" class="messageLine0" stroke-width="2" stroke="black" marker-end="url(#arrowhead)" style="fill: none;"></line></g><g><text x="775" y="414" class="messageText" style="text-anchor: middle;">Content of lambda call</text><line x1="875" y1="421" x2="675" y2="421" class="messageLine0" stroke-width="2" stroke="black" marker-end="url(#arrowhead)" style="fill: none;"></line></g><g><text x="575" y="449" class="messageText" style="text-anchor: middle;">Content of lambda call</text><line x1="675" y1="456" x2="475" y2="456" class="messageLine0" stroke-width="2" stroke="black" marker-end="url(#arrowhead)" style="fill: none;"></line></g><g><text x="375" y="484" class="messageText" style="text-anchor: middle;">Content of lambda call</text><line x1="475" y1="491" x2="275" y2="491" class="messageLine0" stroke-width="2" stroke="black" marker-end="url(#arrowhead)" style="fill: none;"></line></g><g><text x="175" y="519" class="messageText" style="text-anchor: middle;">Content of lambda call</text><line x1="275" y1="526" x2="75" y2="526" class="messageLine0" stroke-width="2" stroke="black" marker-end="url(#arrowhead)" style="fill: none;"></line></g><g><rect x="0" y="546" fill="#eaeaea" stroke="#666" width="150" height="65" rx="3" ry="3" class="actor"></rect><text x="75" y="578.5" dominant-baseline="central" alignment-baseline="central" class="actor" style="text-anchor: middle;"><tspan x="75" dy="0">Browser</tspan></text></g><g><rect x="200" y="546" fill="#eaeaea" stroke="#666" width="150" height="65" rx="3" ry="3" class="actor"></rect><text x="275" y="578.5" dominant-baseline="central" alignment-baseline="central" class="actor" style="text-anchor: middle;"><tspan x="275" dy="0">Cloudflare</tspan></text></g><g><rect x="400" y="546" fill="#eaeaea" stroke="#666" width="150" height="65" rx="3" ry="3" class="actor"></rect><text x="475" y="578.5" dominant-baseline="central" alignment-baseline="central" class="actor" style="text-anchor: middle;"><tspan x="475" dy="0">Cloudfront</tspan></text></g><g><rect x="600" y="546" fill="#eaeaea" stroke="#666" width="150" height="65" rx="3" ry="3" class="actor"></rect><text x="675" y="578.5" dominant-baseline="central" alignment-baseline="central" class="actor" style="text-anchor: middle;"><tspan x="675" dy="0">API Gateway</tspan></text></g><g><rect x="800" y="546" fill="#eaeaea" stroke="#666" width="150" height="65" rx="3" ry="3" class="actor"></rect><text x="875" y="578.5" dominant-baseline="central" alignment-baseline="central" class="actor" style="text-anchor: middle;"><tspan x="875" dy="0">Lambda</tspan></text></g></svg>
+}</style><g></g><g><line id="actor0" x1="75" y1="5" x2="75" y2="611" class="actor-line" stroke-width="0.5px" stroke="#999"></line><rect x="0" y="0" fill="#eaeaea" stroke="#666" width="150" height="65" rx="3" ry="3" class="actor"></rect><text x="75" y="32.5" dominant-baseline="central" alignment-baseline="central" class="actor" style="text-anchor: middle;"><tspan x="75" dy="0">Browser</tspan></text></g><g><line id="actor1" x1="275" y1="5" x2="275" y2="611" class="actor-line" stroke-width="0.5px" stroke="#999"></line><rect x="200" y="0" fill="#eaeaea" stroke="#666" width="150" height="65" rx="3" ry="3" class="actor"></rect><text x="275" y="32.5" dominant-baseline="central" alignment-baseline="central" class="actor" style="text-anchor: middle;"><tspan x="275" dy="0">Cloudflare</tspan></text></g><g><line id="actor2" x1="475" y1="5" x2="475" y2="611" class="actor-line" stroke-width="0.5px" stroke="#999"></line><rect x="400" y="0" fill="#eaeaea" stroke="#666" width="150" height="65" rx="3" ry="3" class="actor"></rect><text x="475" y="32.5" dominant-baseline="central" alignment-baseline="central" class="actor" style="text-anchor: middle;"><tspan x="475" dy="0">Cloudfront</tspan></text></g><g><line id="actor3" x1="675" y1="5" x2="675" y2="611" class="actor-line" stroke-width="0.5px" stroke="#999"></line><rect x="600" y="0" fill="#eaeaea" stroke="#666" width="150" height="65" rx="3" ry="3" class="actor"></rect><text x="675" y="32.5" dominant-baseline="central" alignment-baseline="central" class="actor" style="text-anchor: middle;"><tspan x="675" dy="0">API Gateway</tspan></text></g><g><line id="actor4" x1="875" y1="5" x2="875" y2="611" class="actor-line" stroke-width="0.5px" stroke="#999"></line><rect x="800" y="0" fill="#eaeaea" stroke="#666" width="150" height="65" rx="3" ry="3" class="actor"></rect><text x="875" y="32.5" dominant-baseline="central" alignment-baseline="central" class="actor" style="text-anchor: middle;"><tspan x="875" dy="0">Lambda</tspan></text></g><defs><marker id="arrowhead" refX="5" refY="2" markerWidth="6" markerHeight="4" orient="auto"><path d="M 0,0 V 4 L6,2 Z"></path></marker></defs><defs><marker id="crosshead" markerWidth="15" markerHeight="8" orient="auto" refX="16" refY="4"><path fill="black" stroke="#000000" stroke-width="1px" d="M 9,2 V 6 L16,4 Z" style="stroke-dasharray: 0, 0;"></path><path fill="none" stroke="#000000" stroke-width="1px" d="M 0,1 L 6,7 M 6,1 L 0,7" style="stroke-dasharray: 0, 0;"></path></marker></defs><g><text x="175" y="93" class="messageText" style="text-anchor: middle;">Give me IP of test-cde123.wolke.run</text><line x1="75" y1="100" x2="275" y2="100" class="messageLine0" stroke-width="2" stroke="black" marker-end="url(#arrowhead)" style="fill: none;"></line></g><g><text x="175" y="128" class="messageText" style="text-anchor: middle;">Just use 10.1.55.234</text><line x1="275" y1="135" x2="75" y2="135" class="messageLine0" stroke-width="2" stroke="black" marker-end="url(#arrowhead)" style="fill: none;"></line></g><g><text x="175" y="163" class="messageText" style="text-anchor: middle;">This is you, give me content</text><line x1="75" y1="170" x2="275" y2="170" class="messageLine0" stroke-width="2" stroke="black" marker-end="url(#arrowhead)" style="fill: none;"></line></g><g><rect x="50" y="180" fill="#EDF2AE" stroke="#666" width="250" height="36" rx="0" ry="0" class="note"></rect><text x="46" y="204" fill="black" class="noteText"><tspan x="66" fill="black">If cached in CDN, content is
+directly returned to Browser</tspan></text></g><g><text x="375" y="244" class="messageText" style="text-anchor: middle;">Give me content of test-cde123.wolke.run</text><line x1="275" y1="251" x2="475" y2="251" class="messageLine0" stroke-width="2" stroke="black" marker-end="url(#arrowhead)" style="fill: none;"></line></g><g><text x="575" y="279" class="messageText" style="text-anchor: middle;">Give me content of test-cde123.wolke.run</text><line x1="475" y1="286" x2="675" y2="286" class="messageLine0" stroke-width="2" stroke="black" marker-end="url(#arrowhead)" style="fill: none;"></line></g><g><text x="675" y="314" class="messageText" style="text-anchor: middle;">test-cde123.wolke.run is Lamda test/version 23</text><path d="M 675,321 C 735,311 735,351 675,341" class="messageLine0" stroke-width="2" stroke="black" marker-end="url(#arrowhead)" style="fill: none;"></path></g><g><text x="775" y="379" class="messageText" style="text-anchor: middle;">Execute lambda test version 23</text><line x1="675" y1="386" x2="875" y2="386" class="messageLine0" stroke-width="2" stroke="black" marker-end="url(#arrowhead)" style="fill: none;"></line></g><g><text x="775" y="414" class="messageText" style="text-anchor: middle;">Content of lambda call</text><line x1="875" y1="421" x2="675" y2="421" class="messageLine0" stroke-width="2" stroke="black" marker-end="url(#arrowhead)" style="fill: none;"></line></g><g><text x="575" y="449" class="messageText" style="text-anchor: middle;">Content of lambda call</text><line x1="675" y1="456" x2="475" y2="456" class="messageLine0" stroke-width="2" stroke="black" marker-end="url(#arrowhead)" style="fill: none;"></line></g><g><text x="375" y="484" class="messageText" style="text-anchor: middle;">Content of lambda call</text><line x1="475" y1="491" x2="275" y2="491" class="messageLine0" stroke-width="2" stroke="black" marker-end="url(#arrowhead)" style="fill: none;"></line></g><g><text x="175" y="519" class="messageText" style="text-anchor: middle;">Content of lambda call</text><line x1="275" y1="526" x2="75" y2="526" class="messageLine0" stroke-width="2" stroke="black" marker-end="url(#arrowhead)" style="fill: none;"></line></g><g><rect x="0" y="546" fill="#eaeaea" stroke="#666" width="150" height="65" rx="3" ry="3" class="actor"></rect><text x="75" y="578.5" dominant-baseline="central" alignment-baseline="central" class="actor" style="text-anchor: middle;"><tspan x="75" dy="0">Browser</tspan></text></g><g><rect x="200" y="546" fill="#eaeaea" stroke="#666" width="150" height="65" rx="3" ry="3" class="actor"></rect><text x="275" y="578.5" dominant-baseline="central" alignment-baseline="central" class="actor" style="text-anchor: middle;"><tspan x="275" dy="0">Cloudflare</tspan></text></g><g><rect x="400" y="546" fill="#eaeaea" stroke="#666" width="150" height="65" rx="3" ry="3" class="actor"></rect><text x="475" y="578.5" dominant-baseline="central" alignment-baseline="central" class="actor" style="text-anchor: middle;"><tspan x="475" dy="0">Cloudfront</tspan></text></g><g><rect x="600" y="546" fill="#eaeaea" stroke="#666" width="150" height="65" rx="3" ry="3" class="actor"></rect><text x="675" y="578.5" dominant-baseline="central" alignment-baseline="central" class="actor" style="text-anchor: middle;"><tspan x="675" dy="0">API Gateway</tspan></text></g><g><rect x="800" y="546" fill="#eaeaea" stroke="#666" width="150" height="65" rx="3" ry="3" class="actor"></rect><text x="875" y="578.5" dominant-baseline="central" alignment-baseline="central" class="actor" style="text-anchor: middle;"><tspan x="875" dy="0">Lambda</tspan></text></g></svg>

@@ -9,7 +9,7 @@ sequenceDiagram
   cflare->>bsr: Just use 10.1.55.234
 
   bsr->>cflare: This is you, give me content
-  Note over bsr,cflare: If cached in CDN, content is<br />directly returned to Browser
+  Note over bsr,cflare: If cached in CDN, content is\ndirectly returned to Browser
   cflare->>cfront: Give me content of test-cde123.wolke.run
   cfront->>api: Give me content of test-cde123.wolke.run
   api->>api: test-cde123.wolke.run is Lamda test/version 23
