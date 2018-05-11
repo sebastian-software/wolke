@@ -2,11 +2,12 @@ import chalk from "chalk"
 import { ROOT } from "./appPackage"
 import get from "lodash/get"
 import Promise from "bluebird"
-import { safeLoad } from "js-yaml"
+import { safeLoad, safeDump } from "js-yaml"
 import * as filesystem from "fs"
 import * as path from "path"
 
 const readFile = Promise.promisify(filesystem.readFile) // eslint-disable-line
+const writeFile = Promise.promisify(filesystem.writeFile)
 
 function checkCloudflareEnvironment() {
   return (
@@ -50,6 +51,11 @@ export async function getConfiguration() {
     hasErrors: false,
     errors: []
   }
+}
+
+export async function writeConfiguration(content) {
+  const ymlContent = safeDump(content)
+  await writeFile(path.join(ROOT, "wolke.yml"), ymlContent)
 }
 
 export function printConfigurationErrors(configuration) {
