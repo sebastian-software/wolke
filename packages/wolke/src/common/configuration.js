@@ -7,7 +7,7 @@ import * as filesystem from "fs"
 import * as path from "path"
 
 const readFile = Promise.promisify(filesystem.readFile) // eslint-disable-line
-const writeFile = Promise.promisify(filesystem.writeFile)
+const writeFile = Promise.promisify(filesystem.writeFile) // eslint-disable-line
 
 function checkCloudflareEnvironment() {
   return (
