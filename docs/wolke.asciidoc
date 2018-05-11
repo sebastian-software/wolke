@@ -70,7 +70,13 @@ Now all dependencies are added to `package.json` and installed.
 
 === deploy
 
-`wolke deploy` build and deploys current code to the cloud. It executes `npm run build` first and then packs the application via `npm pack`. This clean app package is then unpacked inside a docker instance to execute `npm install --production` in the target processor architecture. This application including all dependencies is then uploaded to AWS. After configuration of DNS a deployment URL (based upon development stage domain name) is returned where the app is accessible.
+`wolke deploy` build and deploys current code to the cloud. It executes `npm run build` first and then packs the application via `npm pack`. This clean app package is then unpacked inside a docker instance to execute `npm install --production` in the target processor architecture. This application including all dependencies is then uploaded to AWS. An AWS defined domain name is given back that can be used to access the deployed version.
+
+See <<assign>> to assign a domain name from development stage domain name space.
+
+=== assign
+
+`wolke assign` lists last deployed versions of the app and allows to select which one should get an domain name assigned. Domain name is based upon development stage domain name that is given in `wolke init`.
 
 === release
 
