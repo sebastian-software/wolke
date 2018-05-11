@@ -23,5 +23,8 @@
   "pre-commit": "lint-staged",
   "lint-staged": {
     "*.js": "eslint"
+  },
+  "dependencies": {
+    "js-yaml": "^3.11.0"
   }
 }
