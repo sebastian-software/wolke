@@ -66,13 +66,15 @@ Now all dependencies are added to `package.json` and installed.
 
 === cert
 
-`wolke cert` checks if HTTPS certificates are correctly assigned. If not they are requested. The domain owner will get several email for each domain name that has to be approved.
+`wolke cert` checks if HTTPS certificates are correctly assigned. If not they are requested. To approve domain ownership _Wolke_ adds several _CNAME_ entries to DNS server. These _CNAME_ entries must not be deleted.
 
 === deploy
 
 `wolke deploy` build and deploys current code to the cloud. It executes `npm run build` first and then packs the application via `npm pack`. This clean app package is then unpacked inside a docker instance to execute `npm install --production` in the target processor architecture. This application including all dependencies is then uploaded to AWS. An AWS defined domain name is given back that can be used to access the deployed version.
 
 See <<assign>> to assign a domain name from development stage domain name space.
+
+This command runs implicit `wolke cert`.
 
 === assign
 
