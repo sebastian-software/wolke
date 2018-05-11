@@ -8,18 +8,23 @@ import { getVersion } from "../common/version"
 import { checkVersionDeployed } from "../common/lambda"
 import { runServerless } from "../common/serverless"
 
+/*
 import { findZone, findDnsRecord, updateDnsRecord, createDnsRecord } from "../common/cloudflare"
+*/
 
 import initCommand from "./initCommand"
 import certCommand from "./certCommand"
 
+/*
 function getBaseDomainName(domainName) {
   const splittedNames = domainName.split(".")
   const length = splittedNames.length
 
   return `${splittedNames[length - 2]}.${splittedNames[length - 1]}`
 }
+*/
 
+/*
 async function ensureDnsSetting(domainName, distributionDomainName) {
   const zone = await findZone(getBaseDomainName(domainName))
   const dnsRecord = await findDnsRecord(zone, domainName)
@@ -33,6 +38,7 @@ async function ensureDnsSetting(domainName, distributionDomainName) {
     cname: distributionDomainName
   })
 }
+*/
 
 /* eslint-disable max-statements */
 export default async function deployCommand(context) {
@@ -65,9 +71,12 @@ export default async function deployCommand(context) {
 
   const result = await runServerless(context, dist.context, dist.path, version)
 
+  /*
   await ensureDnsSetting(result.domainName, result.distributionDomainName)
 
   const deployedDomainName = `https://${result.domainName}`
+  */
+  const deployedDomainName = `https://${result.distributionDomainName}`
   console.log(`\n${chalk.cyan("Deployed to")} ${chalk.green(deployedDomainName)}`)
 
   return 0
