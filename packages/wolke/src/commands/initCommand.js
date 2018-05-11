@@ -4,7 +4,7 @@ import omit from "lodash/omit"
 import { dirname } from "path"
 import ora from "ora"
 
-import { configurationAvailable } from "../common/configuration"
+import { configurationAvailable, writeConfiguration } from "../common/configuration"
 import { annotatePkg, appPkg } from "../common/appPackage"
 import { execNpm, ensureContent, preEqualComparator } from "../common/io"
 
@@ -123,8 +123,8 @@ export default async function initCommand(context) {
     return 1
   }
 
+  await writeConfiguration(omit(answers, [ "continueInit", "cloudflareEmail", "cloudflareToken" ]))
   await annotatePkg({
-    wolke: omit(answers, [ "continueInit", "cloudflareEmail", "cloudflareToken" ]),
     scripts: {
       "wolke:deploy": "wolke deploy",
       "wolke:release": "wolke release",
